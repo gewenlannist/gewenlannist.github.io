@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="DML语言 插入：insert 修改：update 删除：delete">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySql5-DML数据操作语言+DDL数据定义语言">
+<meta property="og:url" content="http://example.com/2021/05/17/MySql5/index.html">
+<meta property="og:site_name" content="Lannistの博客">
+<meta property="og:description" content="DML语言 插入：insert 修改：update 删除：delete">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-17T02:07:04.000Z">
+<meta property="article:modified_time" content="2021-05-18T08:40:37.479Z">
+<meta property="article:author" content="Lannist">
+<meta property="article:tag" content="learn">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2021/05/17/MySql5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>MySql5-DML数据操作语言+DDL数据定义语言 | Lannistの博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Lannistの博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">永远不要逃向简单的那边</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="tags fa-fw"></i>标签<span class="badge">2</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">3</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">32</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/gewenlannist" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/17/MySql5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Lannist">
+      <meta itemprop="description" content="GeWen学习与生活记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lannistの博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MySql5-DML数据操作语言+DDL数据定义语言
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-05-17 10:07:04" itemprop="dateCreated datePublished" datetime="2021-05-17T10:07:04+08:00">2021-05-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="DML语言"><a href="#DML语言" class="headerlink" title="DML语言"></a>DML语言</h1><ul>
+<li><p>插入：insert</p>
+<p>修改：update</p>
+<p>删除：delete</p>
+<a id="more"></a>
+
+</li>
+</ul>
+<h3 id="插入语句"><a href="#插入语句" class="headerlink" title="插入语句"></a>插入语句</h3><ul>
+<li><p>方式一：经典的插入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">语法：insert into 表名(字段名,…)</span><br><span class="line">	 values(值,…);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>特点</p>
+<ul>
+<li><p>要求值的类型和字段的类型要一致或兼容；</p>
+</li>
+<li><p>字段的个数和顺序不一定与原始表中的字段个数和顺序一致但必须保证值和字段一一对应；</p>
+</li>
+<li><p>假如表中有可以为null的字段，注意可以通过以下两种方式插入null值</p>
+<ul>
+<li>①字段和值都省略</li>
+<li>②字段写上，值使用null</li>
+</ul>
+</li>
+<li><p>字段和值的个数必须一致</p>
+</li>
+<li><p>字段名可以省略，默认所有列</p>
+</li>
+</ul>
+</li>
+<li><p>具体案例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM beauty;</span><br><span class="line">#1.插入的值的类型要与列的类型一致或兼容</span><br><span class="line">INSERT INTO beauty(id,NAME,sex,borndate,phone,photo,boyfriend_id)</span><br><span class="line">VALUES(13,&#39;唐艺昕&#39;,&#39;女&#39;,&#39;1990-4-23&#39;,&#39;1898888888&#39;,NULL,2);</span><br><span class="line"></span><br><span class="line">#2.不可以为null的列必须插入值。可以为null的列如何插入值？</span><br><span class="line">    #方法一：</span><br><span class="line">    INSERT INTO beauty(id,NAME,sex,borndate,phone,photo,boyfriend_id)</span><br><span class="line">    VALUES(13,&#39;唐艺昕&#39;,&#39;女&#39;,&#39;1990-4-23&#39;,&#39;1898888888&#39;,NULL,2);</span><br><span class="line"></span><br><span class="line">    #方法二：</span><br><span class="line">    INSERT INTO beauty(id,NAME,sex,phone)</span><br><span class="line">    VALUES(15,&#39;娜扎&#39;,&#39;女&#39;,&#39;1388888888&#39;);</span><br><span class="line"></span><br><span class="line">#3.列的顺序是否可以调换</span><br><span class="line">INSERT INTO beauty(NAME,sex,id,phone)</span><br><span class="line">VALUES(&#39;蒋欣&#39;,&#39;女&#39;,16,&#39;110&#39;);</span><br><span class="line"></span><br><span class="line">#4.列数和值的个数必须一致</span><br><span class="line"></span><br><span class="line">INSERT INTO beauty(NAME,sex,id,phone)</span><br><span class="line">VALUES(&#39;关晓彤&#39;,&#39;女&#39;,17,&#39;110&#39;);</span><br><span class="line"></span><br><span class="line">#5.可以省略列名，默认所有列，而且列的顺序和表中列的顺序一致</span><br><span class="line"></span><br><span class="line">INSERT INTO beauty</span><br><span class="line">VALUES(18,&#39;张飞&#39;,&#39;男&#39;,NULL,&#39;119&#39;,NULL,NULL);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>方式二</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">语法：insert into 表名 </span><br><span class="line">	 set 列名&#x3D;值,列名&#x3D;值,…</span><br><span class="line"></span><br><span class="line">	INSERT INTO beauty </span><br><span class="line">	SET id&#x3D;19,NAME&#x3D;‘刘涛’,phone&#x3D;‘999’;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>两种方式的区别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1.方式一支持一次插入多行，语法如下：</span><br><span class="line">	insert into 表名【(字段名,..)】 values(值，..),(值，...),...;</span><br><span class="line">2.方式一支持子查询，语法如下：</span><br><span class="line">    insert into 表名 查询语句;</span><br><span class="line">    </span><br><span class="line">#1、方式一支持插入多行,方式二不支持</span><br><span class="line"></span><br><span class="line">INSERT INTO beauty</span><br><span class="line">VALUES(23,&#39;唐艺昕1&#39;,&#39;女&#39;,&#39;1990-4-23&#39;,&#39;1898888888&#39;,NULL,2)</span><br><span class="line">,(24,&#39;唐艺昕2&#39;,&#39;女&#39;,&#39;1990-4-23&#39;,&#39;1898888888&#39;,NULL,2)</span><br><span class="line">,(25,&#39;唐艺昕3&#39;,&#39;女&#39;,&#39;1990-4-23&#39;,&#39;1898888888&#39;,NULL,2);</span><br><span class="line"></span><br><span class="line">#2、方式一支持子查询，方式二不支持</span><br><span class="line"></span><br><span class="line">INSERT INTO beauty(id,NAME,phone) SELECT 26,&#39;宋茜&#39;,&#39;11809866&#39;;</span><br><span class="line"></span><br><span class="line">INSERT INTO beauty(id,NAME,phone) </span><br><span class="line">SELECT id,boyname,&#39;1234567&#39; FROM boys WHERE id&lt;3;       </span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="修改语句"><a href="#修改语句" class="headerlink" title="修改语句"></a>修改语句</h3><ul>
+<li><p>修改单表的记录★</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">语法：update 表名 </span><br><span class="line">	 set 列&#x3D;新值,列&#x3D;新值,… </span><br><span class="line">	 where 筛选条件;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#1.修改单表的记录</span><br><span class="line">#案例1：修改beauty表中姓唐的女神的电话为13899888899</span><br><span class="line">UPDATE beauty SET phone &#x3D; &#39;13899888899&#39;</span><br><span class="line">WHERE NAME LIKE &#39;唐%&#39;;</span><br><span class="line"></span><br><span class="line">#案例2：修改boys表中id好为2的名称为张飞，魅力值 10</span><br><span class="line">UPDATE boys SET boyname&#x3D;&#39;张飞&#39;,usercp&#x3D;10</span><br><span class="line">WHERE id&#x3D;2;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="删除语句"><a href="#删除语句" class="headerlink" title="删除语句"></a>删除语句</h3><ul>
+<li><p>方式一: delete</p>
+</li>
+<li><p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">1、单表的删除【★】</span><br><span class="line">delete from 表名 where 筛选条件</span><br><span class="line"></span><br><span class="line">2、多表的删除【补充】</span><br><span class="line">sql92语法：</span><br><span class="line">delete 表1的别名,表2的别名</span><br><span class="line">from 表1 别名,表2 别名</span><br><span class="line">where 连接条件</span><br><span class="line">and 筛选条件;</span><br><span class="line"></span><br><span class="line">sql99语法：</span><br><span class="line">delete 表1的别名,表2的别名</span><br><span class="line">from 表1 别名</span><br><span class="line">inner|left|right join 表2 别名 on 连接条件</span><br><span class="line">where 筛选条件;mys</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#1.单表的删除</span><br><span class="line">#案例：删除手机号以9结尾的女神信息</span><br><span class="line">DELETE FROM beauty WHERE phone LIKE &#39;%9&#39;;</span><br><span class="line">SELECT * FROM beauty;</span><br><span class="line"></span><br><span class="line">#2.多表的删除</span><br><span class="line">#案例：删除张无忌的女朋友的信息</span><br><span class="line">DELETE b</span><br><span class="line">FROM beauty b</span><br><span class="line">INNER JOIN boys bo ON b.&#96;boyfriend_id&#96; &#x3D; bo.&#96;id&#96;</span><br><span class="line">WHERE bo.&#96;boyName&#96;&#x3D;&#39;张无忌&#39;;</span><br><span class="line"></span><br><span class="line">#案例：删除黄晓明的信息以及他女朋友的信息</span><br><span class="line">DELETE b,bo</span><br><span class="line">FROM beauty b</span><br><span class="line">INNER JOIN boys bo ON b.&#96;boyfriend_id&#96;&#x3D;bo.&#96;id&#96;</span><br><span class="line">WHERE bo.&#96;boyName&#96;&#x3D;&#39;黄晓明&#39;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>方式二：truncate</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">语法：truncate table 表名;</span><br><span class="line"></span><br><span class="line">#案例：将魅力值&gt;100的男神信息删除</span><br><span class="line">TRUNCATE TABLE boys ;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>两种方式的区别【面试题】★</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span><span class="keyword">delete</span> 可以加<span class="keyword">where</span> 条件，<span class="keyword">truncate</span>不能加</span><br><span class="line"><span class="number">2.</span><span class="keyword">truncate</span>直接删除真个表，在创建一个空表，效率高，<span class="keyword">delete</span>只能一行一行删</span><br><span class="line"><span class="number">3.</span>假如要删除的表中有自增长列，</span><br><span class="line">  如果用<span class="keyword">delete</span>删除后，再插入数据，自增长列的值从断点开始，而<span class="keyword">truncate</span>删除后，再插入数据，自增长列的值从<span class="number">1</span>开始。</span><br><span class="line"><span class="number">4.</span><span class="keyword">truncate</span>删除没有返回值，<span class="keyword">delete</span>删除有返回值为删除的行数。</span><br><span class="line"><span class="number">5.</span><span class="keyword">truncate</span>删除不能回滚，<span class="keyword">delete</span>删除可以回滚找回数据.</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h1 id="DDL语言"><a href="#DDL语言" class="headerlink" title="DDL语言"></a>DDL语言</h1><h3 id="库的管理"><a href="#库的管理" class="headerlink" title="库的管理"></a>库的管理</h3><ul>
+<li><p>创建库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create database 【if not exists】 库名【 character set 字符集名】;</span><br><span class="line">#案例：创建库Books</span><br><span class="line">  CREATE DATABASE IF NOT EXISTS books ;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">alter database 库名 character set 字符集名;</span><br><span class="line">#案例：更改库的字符集</span><br><span class="line">ALTER DATABASE books CHARACTER SET gbk;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">drop database 【if exists】 库名;</span><br><span class="line">#案例：库的删除</span><br><span class="line">DROP DATABASE IF EXISTS books;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h3 id="表的管理"><a href="#表的管理" class="headerlink" title="表的管理"></a>表的管理</h3><ul>
+<li><p>表的创建 ★</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line">语法：</span><br><span class="line">create table 表名(</span><br><span class="line">	列名 列的类型【(长度) 约束】,</span><br><span class="line">	列名 列的类型【(长度) 约束】,</span><br><span class="line">	列名 列的类型【(长度) 约束】,</span><br><span class="line">	...</span><br><span class="line">	列名 列的类型【(长度) 约束】</span><br><span class="line">)</span><br><span class="line">*&#x2F;</span><br><span class="line">#案例：创建表Book</span><br><span class="line">CREATE TABLE book (</span><br><span class="line">  id INT,</span><br><span class="line">  #编号</span><br><span class="line">  bName VARCHAR (20),</span><br><span class="line">  #图书名</span><br><span class="line">  price DOUBLE,</span><br><span class="line">  #价格</span><br><span class="line">  authorId INT,</span><br><span class="line">  #作者编号</span><br><span class="line">  publishDate DATETIME#出版日期</span><br><span class="line">) ;</span><br><span class="line"></span><br><span class="line">DESC book;</span><br><span class="line"></span><br><span class="line">#案例：创建表author</span><br><span class="line">CREATE TABLE IF NOT EXISTS author (</span><br><span class="line">  id INT,</span><br><span class="line">  au_n&#96;author&#96;ame VARCHAR (20),</span><br><span class="line">  nation VARCHAR (10)</span><br><span class="line">);</span><br><span class="line">DESC author ;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>表的修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">1.添加列</span><br><span class="line">alter table 表名 add column 列名 类型 【first|after 字段名】;</span><br><span class="line">2.修改列的类型或约束</span><br><span class="line">alter table 表名 modify column 列名 新类型 【新约束】;</span><br><span class="line">3.修改列名</span><br><span class="line">alter table 表名 change column 旧列名 新列名 类型;</span><br><span class="line">4 .删除列</span><br><span class="line">alter table 表名 drop column 列名;</span><br><span class="line">5.修改表名</span><br><span class="line">alter table 表名 rename 【to】 新表名;</span><br><span class="line"></span><br><span class="line">案例：</span><br><span class="line">#①修改列名</span><br><span class="line">ALTER TABLE book CHANGE COLUMN publishdate pubDate DATETIME ;</span><br><span class="line"></span><br><span class="line">#②修改列的类型或约束</span><br><span class="line">ALTER TABLE book MODIFY COLUMN pubdate TIMESTAMP;</span><br><span class="line"></span><br><span class="line">#③添加新列</span><br><span class="line">ALTER TABLE author ADD COLUMN annual DOUBLE; </span><br><span class="line"></span><br><span class="line">#④删除列</span><br><span class="line">ALTER TABLE book_author DROP COLUMN  annual;</span><br><span class="line"></span><br><span class="line">#⑤修改表名</span><br><span class="line">ALTER TABLE book_author RENAME TO author;</span><br><span class="line"></span><br><span class="line">DESC book;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>表的删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">drop table【if exists】 表名;</span><br><span class="line"></span><br><span class="line">案例：</span><br><span class="line">DROP TABLE IF EXISTS book_author;</span><br><span class="line"></span><br><span class="line">SHOW TABLES;</span><br><span class="line"></span><br><span class="line">#通用的写法：</span><br><span class="line">DROP DATABASE IF EXISTS 旧库名;</span><br><span class="line">CREATE DATABASE 新库名 ;</span><br><span class="line"></span><br><span class="line">DROP TABLE IF EXISTS 旧表名;</span><br><span class="line">CREATE TABLE  表名();</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><h3 id="数值型"><a href="#数值型" class="headerlink" title="数值型"></a>数值型</h3><h4 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h4><ul>
+<li><p>分类：</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">tinyint</span>、smallint、mediumint、int/integer、bigint</span><br><span class="line"><span class="attribute">1</span>	       <span class="number">2</span>		   <span class="number">3</span>	       <span class="number">4</span>		 <span class="number">8</span>	字节</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>特点：</p>
+<ul>
+<li><p>① 如果不设置无符号还是有符号，默认是有符号，如果想设置无符号，需要添加unsigned关键字</p>
+</li>
+<li><p>② 如果插入的数值超出了整型的范围,会报out of range异常，并且插入临界值</p>
+</li>
+<li><p>③ 如果不设置长度，会有默认的长度</p>
+<p>​    长度代表了显示的最大宽度，如果不够会用0在左边填充，但必须搭配zerofill使用！</p>
+</li>
+</ul>
+</li>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#1.如何设置无符号和有符号</span><br><span class="line">DROP TABLE IF EXISTS tab_int ;</span><br><span class="line"></span><br><span class="line">CREATE TABLE tab_int (t1 INT (7) ZEROFILL, t2 INT (7) ZEROFILL) ;&#x2F;&#x2F;zerofill不够左填充0</span><br><span class="line"></span><br><span class="line">DESC tab_int ;</span><br><span class="line"></span><br><span class="line">INSERT INTO tab_int VALUES (- 123456) ;&#x2F;&#x2F;超出范围 0000000</span><br><span class="line"></span><br><span class="line">INSERT INTO tab_int VALUES (- 123456, - 123456) ;</span><br><span class="line"></span><br><span class="line">INSERT INTO tab_int VALUES (2147483648, 4294967296) ;</span><br><span class="line"></span><br><span class="line">INSERT INTO tab_int VALUES (123, 123) ;&#x2F;&#x2F;0000123</span><br><span class="line"></span><br><span class="line">SELECT * FROM tab_int ;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h4 id="浮点型"><a href="#浮点型" class="headerlink" title="浮点型"></a>浮点型</h4><ul>
+<li><p>定点数：dec(M,D)；decimal(M,D)</p>
+</li>
+<li><p>浮点数：float(M,D) 4字节；double(M,D) 8字节</p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li>①M代表整数部位+小数部位的个数，D代表小数部位</li>
+<li>②如果超出范围，则报out or range异常，并且插入临界值</li>
+<li>③M和D都可以省略，但对于定点数，M默认为10，D默认为0</li>
+<li>④如果精度要求较高，则优先考虑使用定点数</li>
+</ul>
+</li>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#测试M和D</span><br><span class="line">DROP TABLE tab_float ;</span><br><span class="line"></span><br><span class="line">CREATE TABLE tab_float (f1 FLOAT, f2 DOUBLE, f3 DECIMAL) ;</span><br><span class="line"></span><br><span class="line">SELECT * FROM tab_float ;</span><br><span class="line"></span><br><span class="line">DESC tab_float ;</span><br><span class="line"></span><br><span class="line">INSERT INTO tab_float VALUES(123.4523,123.4523,123.4523);&#x2F;&#x2F;decimal默认显示123</span><br><span class="line">INSERT INTO tab_float VALUES(123.456,123.456,123.456);</span><br><span class="line">INSERT INTO tab_float VALUES(123.4,123.4,123.4);</span><br><span class="line">INSERT INTO tab_float VALUES(1523.4,1523.4,1523.4);</span><br><span class="line"></span><br><span class="line">#原则：</span><br><span class="line">#所选择的类型越简单越好，能保存数值的类型越小越好</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h4 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h4><ul>
+<li><p>较短的文本：char、varchar</p>
+</li>
+<li><p>其他：</p>
+<ul>
+<li>binary和varbinary用于保存较短的二进制</li>
+<li>enum用于保存枚举</li>
+<li>set用于保存集合</li>
+</ul>
+</li>
+<li><p>较长的文本：text、blob(较大的二进制)</p>
+</li>
+<li><p>特点</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  		  写法			  M的意思						特点		 空间的耗费	 效率</span><br><span class="line"><span class="type">char</span>	<span class="type">char</span>(M)		 最大的字符数，可以省略，默认为<span class="number">1</span>	  固定长度的字符	比较耗费	 高</span><br><span class="line"></span><br><span class="line"><span class="type">varchar</span>	<span class="type">varchar</span>(M)	 最大的字符数，不可以省略			可变长度的字符	  比较节省	   低</span><br><span class="line">若存&quot;abcd&quot;则<span class="type">char</span>[<span class="number">10</span>]除了abcd四个字符后面仍占空间六个空格，<span class="type">varchar</span>[<span class="number">10</span>]则只存abcd</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE tab_char(</span><br><span class="line">	c1 ENUM(&#39;a&#39;,&#39;b&#39;,&#39;c&#39;)</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">INSERT INTO tab_char VALUES(&#39;a&#39;);</span><br><span class="line">INSERT INTO tab_char VALUES(&#39;b&#39;);</span><br><span class="line">INSERT INTO tab_char VALUES(&#39;c&#39;);</span><br><span class="line">INSERT INTO tab_char VALUES(&#39;m&#39;);&#x2F;&#x2F;可以执行但为空</span><br><span class="line">INSERT INTO tab_char VALUES(&#39;A&#39;);</span><br><span class="line"></span><br><span class="line">SELECT * FROM tab_set;</span><br><span class="line"></span><br><span class="line">CREATE TABLE tab_set(</span><br><span class="line">	s1 SET(&#39;a&#39;,&#39;b&#39;,&#39;c&#39;,&#39;d&#39;)</span><br><span class="line">);</span><br><span class="line">INSERT INTO tab_set VALUES(&#39;a&#39;);</span><br><span class="line">INSERT INTO tab_set VALUES(&#39;A,B&#39;);</span><br><span class="line">INSERT INTO tab_set VALUES(&#39;a,c,d&#39;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h4 id="日期型"><a href="#日期型" class="headerlink" title="日期型"></a>日期型</h4><ul>
+<li><p>分类：</p>
+<ul>
+<li>date只保存日期；</li>
+<li>time 只保存时间；</li>
+<li>year只保存年；</li>
+<li>datetime保存日期+时间；</li>
+<li>timestamp保存日期+时间；</li>
+</ul>
+</li>
+<li><p>特点</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">			字节		范围			时区等的影响</span><br><span class="line">datetime	 <span class="number">8</span>		<span class="number">1000</span>——<span class="number">9999</span>	       不受</span><br><span class="line"><span class="type">timestamp</span>	 <span class="number">4</span>	    <span class="number">1970</span><span class="number">-2038</span>	        受</span><br><span class="line">更多用<span class="type">timestamp</span>，占空间小</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>案例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE tab_date(</span><br><span class="line">	t1 DATETIME,</span><br><span class="line">	t2 TIMESTAMP</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">INSERT INTO tab_date VALUES(NOW(),NOW());</span><br><span class="line"></span><br><span class="line">SELECT * FROM tab_date;</span><br><span class="line"></span><br><span class="line">SHOW VARIABLES LIKE &#39;time_zone&#39;;</span><br><span class="line"></span><br><span class="line">SET time_zone&#x3D;&#39;+9:00&#39;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+	 <div style="text-align:center;color: #ccc;font-size:14px;">
+    ------------- 本文结束 <i class="fa fa-heart-o"></i> 感谢您的阅读-------------
+     </div>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/learn/" rel="tag"># learn</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/05/16/MySql4/" rel="prev" title="MySql4-DQL数据查询语言后五项">
+      <i class="fa fa-chevron-left"></i> MySql4-DQL数据查询语言后五项
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/05/17/MySql6/" rel="next" title="MySql6-DDL数据定义语言+TCL事务控制语言">
+      MySql6-DDL数据定义语言+TCL事务控制语言 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#DML%E8%AF%AD%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">DML语言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.0.1.</span> <span class="nav-text">插入语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.0.2.</span> <span class="nav-text">修改语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.0.3.</span> <span class="nav-text">删除语句</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DDL%E8%AF%AD%E8%A8%80"><span class="nav-number">2.</span> <span class="nav-text">DDL语言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%93%E7%9A%84%E7%AE%A1%E7%90%86"><span class="nav-number">2.0.1.</span> <span class="nav-text">库的管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E7%9A%84%E7%AE%A1%E7%90%86"><span class="nav-number">2.0.2.</span> <span class="nav-text">表的管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">2.1.</span> <span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E5%9E%8B"><span class="nav-number">2.1.1.</span> <span class="nav-text">数值型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B4%E5%9E%8B"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">整型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%AE%E7%82%B9%E5%9E%8B"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">浮点型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E5%9E%8B"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">字符型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%97%A5%E6%9C%9F%E5%9E%8B"><span class="nav-number">2.1.1.4.</span> <span class="nav-text">日期型</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Lannist"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Lannist</p>
+  <div class="site-description" itemprop="description">GeWen学习与生活记录</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/gewenlannist" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;gewenlannist" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:gewen54@aliyun.com" title="Email → mailto:gewen54@aliyun.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>Email</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lannist</span>
+</div>
+
+<!---->
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
+</html>
+
+
+
+
+
+<!-- 页面点击小红心 -->
+
+      <script type="text/javascript" src="/js/clicklove.js"></script>
+
+
+
+
+<script type="text/javascript"
+color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+

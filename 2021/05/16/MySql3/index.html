@@ -19,15 +19,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="常见函数 概念：类似于Java的方法，将一组逻辑语句封装在方法体中，对外暴露方法名  优点：1.隐藏了实现细节 2.提高了代码的重用性  语法： 1select 函数名(实参列表) 【from 表】;  特点： 1.叫什么(函数名) 2.干什么(函数功能)  分类: 1.单行函数，如concat、length、ifnull等2.分组函数，做统计使用   单行函数 单行函数分类：字符函数、数学函数、">
+  <meta name="description" content="字符函数、数学函数、日期函数、其他函数、流程控制函数 单行函数：字符函数、数学函数、日期函数、其他函数、流程控制函数 分组函数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySql3-常见函数">
 <meta property="og:url" content="http://example.com/2021/05/16/MySql3/index.html">
 <meta property="og:site_name" content="Lannistの博客">
-<meta property="og:description" content="常见函数 概念：类似于Java的方法，将一组逻辑语句封装在方法体中，对外暴露方法名  优点：1.隐藏了实现细节 2.提高了代码的重用性  语法： 1select 函数名(实参列表) 【from 表】;  特点： 1.叫什么(函数名) 2.干什么(函数功能)  分类: 1.单行函数，如concat、length、ifnull等2.分组函数，做统计使用   单行函数 单行函数分类：字符函数、数学函数、">
+<meta property="og:description" content="字符函数、数学函数、日期函数、其他函数、流程控制函数 单行函数：字符函数、数学函数、日期函数、其他函数、流程控制函数 分组函数">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-16T12:30:48.000Z">
-<meta property="article:modified_time" content="2021-05-16T14:03:44.309Z">
+<meta property="article:modified_time" content="2021-05-16T14:26:38.347Z">
 <meta property="article:author" content="Lannist">
 <meta property="article:tag" content="learn">
 <meta name="twitter:card" content="summary">
@@ -136,7 +136,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">28</span></a>
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">32</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -249,7 +249,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="常见函数"><a href="#常见函数" class="headerlink" title="常见函数"></a>常见函数</h2><ul>
+        <p>字符函数、数学函数、日期函数、其他函数、流程控制函数</p>
+<p>单行函数：字符函数、数学函数、日期函数、其他函数、流程控制函数</p>
+<p>分组函数</p>
+<a id="more"></a>
+
+<h2 id="常见函数"><a href="#常见函数" class="headerlink" title="常见函数"></a>常见函数</h2><ul>
 <li><p>概念：类似于Java的方法，将一组逻辑语句封装在方法体中，对外暴露方法名</p>
 </li>
 <li><p>优点：1.隐藏了实现细节 2.提高了代码的重用性</p>
@@ -299,7 +304,6 @@
 </li>
 <li><p>案例</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">#1.简单使用</span><br><span class="line">SELECT SUM(salary) FROM employees;</span><br><span class="line">SELECT AVG(salary) FROM employees;</span><br><span class="line">SELECT MAX(salary) FROM employees;</span><br><span class="line">SELECT MIN(salary) FROM employees;</span><br><span class="line">SELECT COUNT(salary) FROM employees;</span><br><span class="line"></span><br><span class="line">SELECT SUM(salary) 和,ROUND(AVG(salary),2) 平均,MAX(salary) 最高,MIN(salary) 最低,COUNT(salary) 个数</span><br><span class="line">FROM employees;</span><br><span class="line"></span><br><span class="line">#2.参数支持哪些数据类型</span><br><span class="line"></span><br><span class="line">SELECT SUM(last_name),AVG(last_name) FROM employees;</span><br><span class="line">SELECT SUM(hiredate),AVG(hiredate) FROM employees;</span><br><span class="line"></span><br><span class="line">SELECT MAX(last_name),MIN(last_name) FROM employees;</span><br><span class="line">SELECT MAX(hiredate),MIN(hiredate) FROM employees;</span><br><span class="line"></span><br><span class="line">SELECT COUNT(commission_pct) FROM employees;</span><br><span class="line">SELECT COUNT(last_name) FROM employees;</span><br><span class="line"></span><br><span class="line">#3.是否忽略null</span><br><span class="line"></span><br><span class="line">SELECT SUM(commission_pct),AVG(commission_pct) FROM employees;</span><br><span class="line"></span><br><span class="line">SELECT commission_pct FROM employees;</span><br><span class="line"></span><br><span class="line">SELECT SUM(commission_pct),AVG(commission_pct),SUM(commission_pct)&#x2F;35,AVG(commission_pct)&#x2F;107 FROM employees;</span><br><span class="line"></span><br><span class="line">SELECT MAX(commission_pct),MIN(commission_pct) FROM employees;</span><br><span class="line"></span><br><span class="line">SELECT COUNT(commission_pct) FROM employees;</span><br><span class="line"></span><br><span class="line">#4.和distinct搭配</span><br><span class="line"></span><br><span class="line">SELECT SUM(DISTINCT salary),SUM(salary) FROM employees;</span><br><span class="line"></span><br><span class="line">SELECT COUNT(DISTINCT salary),COUNT(salary) FROM employees;</span><br><span class="line"></span><br><span class="line">#5.count函数详解</span><br><span class="line"></span><br><span class="line">SELECT COUNT(salary) FROM employees;</span><br><span class="line">SELECT COUNT(*) FROM employees;</span><br><span class="line">SELECT COUNT(1) FROM employees;</span><br><span class="line">&#x2F;*</span><br><span class="line">效率上：</span><br><span class="line">MyISAM存储引擎，count(*)最高</span><br><span class="line">InnoDB存储引擎，count(*)和count(1)效率&gt;count(字段)</span><br><span class="line">*&#x2F;</span><br><span class="line"></span><br><span class="line">#6.和分组函数一同查询的字段有限制</span><br><span class="line"></span><br><span class="line">SELECT AVG(salary),employee_id FROM employees;</span><br></pre></td></tr></table></figure>
-
 </li>
 </ul>
 
@@ -323,10 +327,13 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/05/16/MySql2/" rel="prev" title="MySql2-DQL数据查询语言">
-      <i class="fa fa-chevron-left"></i> MySql2-DQL数据查询语言
+    <a href="/2021/05/16/MySql2/" rel="prev" title="MySql2-DQL数据查询语言前五项">
+      <i class="fa fa-chevron-left"></i> MySql2-DQL数据查询语言前五项
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/05/16/MySql4/" rel="next" title="MySql4-DQL数据查询语言后五项">
+      MySql4-DQL数据查询语言后五项 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -401,7 +408,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
