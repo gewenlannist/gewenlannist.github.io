@@ -21,30 +21,42 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="GeWen学习与生活记录">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lannistの博客">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="五、排序1、常见的排序算法 2、算法的时间复杂度时间频度和时间复杂度时间频度T(n) 一个算法执行所耗费的时间，从理论上是不能算出来的，必须上机运行测试才能知道。但我们不可能也没有必要对每个算法都上机测试，只需知道哪个算法花费的时间多，哪个算法花费的时间少就可以了。并且一个算法花费的时间与算法中语句的执行次数成正比例，哪个算法中语句执行次数多，它花费时间就多。一个算法中的语句执行次数称为语句频度或">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据结构与算法">
+<meta property="og:url" content="http://example.com/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/index.html">
 <meta property="og:site_name" content="Lannistの博客">
-<meta property="og:description" content="GeWen学习与生活记录">
+<meta property="og:description" content="五、排序1、常见的排序算法 2、算法的时间复杂度时间频度和时间复杂度时间频度T(n) 一个算法执行所耗费的时间，从理论上是不能算出来的，必须上机运行测试才能知道。但我们不可能也没有必要对每个算法都上机测试，只需知道哪个算法花费的时间多，哪个算法花费的时间少就可以了。并且一个算法花费的时间与算法中语句的执行次数成正比例，哪个算法中语句执行次数多，它花费时间就多。一个算法中的语句执行次数称为语句频度或">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5.1.png">
+<meta property="og:image" content="http://example.com/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5.2.png">
+<meta property="og:image" content="http://example.com/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5.3.png">
+<meta property="og:image" content="http://example.com/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5.4.png">
+<meta property="og:image" content="http://example.com/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5.5.png">
+<meta property="og:image" content="http://example.com/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5.6.png">
+<meta property="og:image" content="http://example.com/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5.7.png">
+<meta property="og:image" content="http://example.com/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5.8.png">
+<meta property="article:published_time" content="2021-06-10T06:53:04.000Z">
+<meta property="article:modified_time" content="2021-06-16T07:56:28.155Z">
 <meta property="article:author" content="Lannist">
+<meta property="article:tag" content="learn">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5.1.png">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Lannistの博客</title>
+  <title>数据结构与算法 | Lannistの博客</title>
   
 
 
@@ -183,9 +195,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -201,10 +214,9 @@
       <meta itemprop="name" content="Lannistの博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">数据结构与算法</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          数据结构与算法
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -226,6 +238,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
@@ -236,7 +255,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="五、排序"><a href="#五、排序" class="headerlink" title="五、排序"></a>五、排序</h1><h2 id="1、常见的排序算法"><a href="#1、常见的排序算法" class="headerlink" title="1、常见的排序算法"></a>1、常见的排序算法</h2><p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5.1.png"></p>
+        <h1 id="五、排序"><a href="#五、排序" class="headerlink" title="五、排序"></a>五、排序</h1><h2 id="1、常见的排序算法"><a href="#1、常见的排序算法" class="headerlink" title="1、常见的排序算法"></a>1、常见的排序算法</h2><p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5.1.png"></p>
 <h2 id="2、算法的时间复杂度"><a href="#2、算法的时间复杂度" class="headerlink" title="2、算法的时间复杂度"></a>2、算法的时间复杂度</h2><h3 id="时间频度和时间复杂度"><a href="#时间频度和时间复杂度" class="headerlink" title="时间频度和时间复杂度"></a>时间频度和时间复杂度</h3><p><strong>时间频度T(n)</strong></p>
 <p>一个算法执行所耗费的时间，从理论上是不能算出来的，必须上机运行测试才能知道。但我们不可能也没有必要对每个算法都上机测试，只需知道哪个算法花费的时间多，哪个算法花费的时间少就可以了。并且一个算法花费的时间与算法中<strong>语句的执行次数成正比例</strong>，哪个算法中语句执行次数多，它花费时间就多。<strong>一个算法中的语句执行次数称为语句频度或时间频度</strong>。记为T(n)。</p>
 <p><strong>时间复杂度O(n)</strong></p>
@@ -380,705 +399,37 @@
 </li>
 </ul>
 
-      
     </div>
 
     
     
     
+	 <div style="text-align:center;color: #ccc;font-size:14px;">
+    ------------- 本文结束 <i class="fa fa-heart-o"></i> 感谢您的阅读-------------
+     </div>
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/learn/" rel="tag"><i class="fa fa-tag"></i>learn</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/10/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/10/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/" class="post-title-link" itemprop="url">JDBC核心技术</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-06-10 14:53:04" itemprop="dateCreated datePublished" datetime="2021-06-10T14:53:04+08:00">2021-06-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JDBC/" itemprop="url" rel="index"><span itemprop="name">JDBC</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="第1章：JDBC概述"><a href="#第1章：JDBC概述" class="headerlink" title="第1章：JDBC概述"></a>第1章：JDBC概述</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/10/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/18/MySql7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/18/MySql7/" class="post-title-link" itemprop="url">MySql7-视图</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-18 16:07:04" itemprop="dateCreated datePublished" datetime="2021-05-18T16:07:04+08:00">2021-05-18</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><ul>
-<li><p>视图：虚拟表,和普通表一样使用。mysql5.1版本出现的新特性，是通过表动态生成的数据。</p>
-</li>
-<li><p>视图的好处</p>
-<ul>
-<li><p>简化复杂的sql操作，不必知道它的查询细节</p>
-</li>
-<li><p>保护数据，提高安全性</p>
-</li>
-<li><p>多个地方用到同样的查询结果</p></li></ul></li></ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/18/MySql7/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/06/10/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/" rel="prev" title="JDBC核心技术">
+      <i class="fa fa-chevron-left"></i> JDBC核心技术
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/17/MySql6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/17/MySql6/" class="post-title-link" itemprop="url">MySql6-DDL数据定义语言+TCL事务控制语言</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-17 22:07:04" itemprop="dateCreated datePublished" datetime="2021-05-17T22:07:04+08:00">2021-05-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="DDL语言"><a href="#DDL语言" class="headerlink" title="DDL语言"></a>DDL语言</h1><h2 id="常见的约束"><a href="#常见的约束" class="headerlink" title="常见的约束"></a>常见的约束</h2><ul>
-<li><p>含义：一种限制，用于限制表中的数据，为了保证表中的数据的准确和可靠性。</p>
-</li>
-<li><p>分类</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">六大约束</span><br><span class="line">	NOT NULL：非空，用于保证该字段的值不能为空</span><br><span class="line">	比如姓名、学号等</span><br><span class="line">	DEFAULT:默认，用于保证该字段有默认值</span><br><span class="line">	比如性别</span><br><span class="line">	PRIMARY KEY:主键，用于保证该字段的值具有唯一性，并且非空</span><br><span class="line">	比如学号、员工编号等</span><br><span class="line">	UNIQUE:唯一，用于保证该字段的值具有唯一性，可以为空</span><br><span class="line">	比如座位号</span><br><span class="line">	CHECK:检查约束【mysql中不支持】</span><br><span class="line">	比如年龄、性别</span><br><span class="line">	FOREIGN KEY:外键，用于限制两个表的关系，用于保证该字段的值必须来自于主表的关联列的值</span><br><span class="line">		在从表添加外键约束，用于引用主表中某列的值</span><br><span class="line">	比如学生表的专业编号，员工表的部门编号，员工表的工种编号</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/17/MySql6/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/17/MySql5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/17/MySql5/" class="post-title-link" itemprop="url">MySql5-DML数据操作语言+DDL数据定义语言</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-17 10:07:04" itemprop="dateCreated datePublished" datetime="2021-05-17T10:07:04+08:00">2021-05-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="DML语言"><a href="#DML语言" class="headerlink" title="DML语言"></a>DML语言</h1><ul>
-<li><p>插入：insert</p>
-<p>修改：update</p>
-<p>删除：delete</p></li></ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/17/MySql5/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/16/MySql4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/16/MySql4/" class="post-title-link" itemprop="url">MySql4-DQL数据查询语言后五项</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-16 22:28:04" itemprop="dateCreated datePublished" datetime="2021-05-16T22:28:04+08:00">2021-05-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/2021/05/16/MySql4/1.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/16/MySql4/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/16/MySql3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/16/MySql3/" class="post-title-link" itemprop="url">MySql3-常见函数</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-16 20:30:48" itemprop="dateCreated datePublished" datetime="2021-05-16T20:30:48+08:00">2021-05-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>字符函数、数学函数、日期函数、其他函数、流程控制函数</p>
-<p>单行函数：字符函数、数学函数、日期函数、其他函数、流程控制函数</p>
-<p>分组函数</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/16/MySql3/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/16/MySql2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/16/MySql2/" class="post-title-link" itemprop="url">MySql2-DQL数据查询语言前五项</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-16 19:30:48" itemprop="dateCreated datePublished" datetime="2021-05-16T19:30:48+08:00">2021-05-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/2021/05/16/MySql2/1.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/16/MySql2/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/16/MySql1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/16/MySql1/" class="post-title-link" itemprop="url">MySql1-mysql介绍</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-16 17:59:55" itemprop="dateCreated datePublished" datetime="2021-05-16T17:59:55+08:00">2021-05-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/2021/05/16/MySql1/1.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/16/MySql1/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/06/GW%E7%9A%84%E7%AC%AC%E4%BA%94%E5%BC%A0%E7%94%BB-%E7%9C%BC%E9%95%9C%E5%BE%AE%E7%AC%91%E7%94%B7%E5%AD%A9/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/06/GW%E7%9A%84%E7%AC%AC%E4%BA%94%E5%BC%A0%E7%94%BB-%E7%9C%BC%E9%95%9C%E5%BE%AE%E7%AC%91%E7%94%B7%E5%AD%A9/" class="post-title-link" itemprop="url">GW的第五张画-眼镜微笑男孩</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-06 22:15:27" itemprop="dateCreated datePublished" datetime="2021-05-06T22:15:27+08:00">2021-05-06</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Paint/" itemprop="url" rel="index"><span itemprop="name">Paint</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/2021/05/06/GW%E7%9A%84%E7%AC%AC%E4%BA%94%E5%BC%A0%E7%94%BB-%E7%9C%BC%E9%95%9C%E5%BE%AE%E7%AC%91%E7%94%B7%E5%AD%A9/GW%E7%9A%84%E7%AC%AC%E4%BA%94%E5%BC%A0%E7%94%BB-%E7%9C%BC%E9%95%9C%E5%BE%AE%E7%AC%91%E7%94%B7%E5%AD%A9.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 
@@ -1130,6 +481,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E6%8E%92%E5%BA%8F"><span class="nav-text">五、排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E5%B8%B8%E8%A7%81%E7%9A%84%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95"><span class="nav-text">1、常见的排序算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text">2、算法的时间复杂度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E9%A2%91%E5%BA%A6%E5%92%8C%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text">时间频度和时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text">常见的时间复杂度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E6%95%B0%E9%98%B6-O-1"><span class="nav-text">常数阶 O(1)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E6%95%B0%E9%98%B6O-log2n"><span class="nav-text">对数阶O(log2n)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E9%98%B6O-n"><span class="nav-text">线性阶O(n)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E5%AF%B9%E6%95%B0%E9%98%B6O-nlog2n"><span class="nav-text">线性对数阶O(nlog2n)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B3%E6%96%B9%E9%98%B6O-n2"><span class="nav-text">平方阶O(n2)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AB%8B%E6%96%B9%E9%98%B6O-n3"><span class="nav-text">立方阶O(n3)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-text">3、排序算法的时间复杂度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E5%AF%B9%E6%95%B0%E5%99%A8%E9%AA%8C%E8%AF%81%E7%AE%97%E6%B3%95"><span class="nav-text">4、对数器验证算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F"><span class="nav-text">5、选择排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F"><span class="nav-text">6、冒泡排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7%E3%80%81%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F"><span class="nav-text">7、插入排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8%E3%80%81%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F"><span class="nav-text">8、希尔排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9%E3%80%81%E5%BD%92%E5%B9%B6%E6%8E%92%E5%BA%8F"><span class="nav-text">9、归并排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10%E3%80%81%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F"><span class="nav-text">10、快速排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11%E3%80%81%E8%AE%A1%E6%95%B0%E6%8E%92%E5%BA%8F"><span class="nav-text">11、计数排序</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
