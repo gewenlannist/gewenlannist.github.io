@@ -21,17 +21,23 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="GeWen学习与生活记录">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lannistの博客">
-<meta property="og:url" content="http://example.com/archives/2021/page/4/index.html">
+  <meta name="description" content="一、什么是Spring？Spring1、Spring 是轻量级的开源的 JavaEE 框架 2、Spring 可以解决企业应用开发的复杂性 3、Spring 有两个核心部分：IOC 和 Aop （1）IOC：控制反转，把创建对象过程交给 Spring 进行管理 （2）Aop：面向切面，不修改源代码进行功能增强 4、Spring 特点 （1）方便解耦，简化开发 （2）Aop 编程支持 （3）方便程序">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring">
+<meta property="og:url" content="http://example.com/2021/06/23/Spring5/index.html">
 <meta property="og:site_name" content="Lannistの博客">
-<meta property="og:description" content="GeWen学习与生活记录">
+<meta property="og:description" content="一、什么是Spring？Spring1、Spring 是轻量级的开源的 JavaEE 框架 2、Spring 可以解决企业应用开发的复杂性 3、Spring 有两个核心部分：IOC 和 Aop （1）IOC：控制反转，把创建对象过程交给 Spring 进行管理 （2）Aop：面向切面，不修改源代码进行功能增强 4、Spring 特点 （1）方便解耦，简化开发 （2）Aop 编程支持 （3）方便程序">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/Spring/20210302160946473.png">
+<meta property="og:image" content="http://example.com/Spring/20210302161502546.png">
+<meta property="article:published_time" content="2021-06-23T09:59:55.000Z">
+<meta property="article:modified_time" content="2021-06-23T04:50:46.511Z">
 <meta property="article:author" content="Lannist">
+<meta property="article:tag" content="learn">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/Spring/20210302160946473.png">
 
-<link rel="canonical" href="http://example.com/archives/2021/page/4/">
+<link rel="canonical" href="http://example.com/2021/06/23/Spring5/">
 
 
 <script id="page-configurations">
@@ -39,12 +45,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | Lannistの博客</title>
+  <title>Spring | Lannistの博客</title>
   
 
 
@@ -183,75 +189,122 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        
-        <span class="collection-header">还行! 目前共计 35 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/23/Spring5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Lannist">
+      <meta itemprop="description" content="GeWen学习与生活记录">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lannistの博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Spring
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-06-23 17:59:55" itemprop="dateCreated datePublished" datetime="2021-06-23T17:59:55+08:00">2021-06-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Spring/" itemprop="url" rel="index"><span itemprop="name">Spring</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-03-05T11:24:28+08:00"
-              content="2021-03-05">
-          03-05
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/03/05/%E7%BA%BF%E6%80%A7%E8%A1%A8%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84/" itemprop="url">
-            <span itemprop="name">线性表顺序存储结构</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-03-02T11:24:04+08:00"
-              content="2021-03-02">
-          03-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/03/02/%E6%88%AA%E5%9B%BE/" itemprop="url">
-            <span itemprop="name">截图</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <h2 id="一、什么是Spring？"><a href="#一、什么是Spring？" class="headerlink" title="一、什么是Spring？"></a>一、什么是Spring？</h2><h3 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h3><p>1、Spring 是轻量级的开源的 JavaEE 框架</p>
+<p>2、Spring 可以解决企业应用开发的复杂性</p>
+<p>3、Spring 有两个核心部分：IOC 和 Aop</p>
+<p>（1）IOC：控制反转，把创建对象过程交给 Spring 进行管理</p>
+<p>（2）Aop：面向切面，不修改源代码进行功能增强</p>
+<p>4、Spring 特点</p>
+<p>（1）方便解耦，简化开发</p>
+<p>（2）Aop 编程支持</p>
+<p>（3）方便程序测试</p>
+<p>（4）方便和其他框架进行整合</p>
+<p>（5）方便进行事务操作</p>
+<p>（6）降低 API 开发难度</p>
+<h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>spring.io</p>
+<p>project -&gt; Spring Framework -&gt; github -&gt; Access to Binaries</p>
+<p><a target="_blank" rel="noopener" href="https://repo.spring.io/">https://repo.spring.io</a></p>
+<p>5.3.8最新版</p>
+<p><a target="_blank" rel="noopener" href="https://repo.spring.io/libs-release/org/springframework/spring">https://repo.spring.io/libs-release/org/springframework/spring</a></p>
+<h3 id="Spring架构图，Spring由哪些模块组成？"><a href="#Spring架构图，Spring由哪些模块组成？" class="headerlink" title="Spring架构图，Spring由哪些模块组成？"></a>Spring架构图，Spring由哪些模块组成？</h3><p>Spring 总共大约有 20 个模块， 由 1300 多个不同的文件构成。 而这些组件被分别整合在核心容器（Core Container）、AOP（Aspect Oriented Programming）和设备支持（Instrmentation） 、数据访问与集成（Data Access/Integeration） 、 Web、 消息（Messaging） 、 Test等 6 个模块中。 </p>
+<p>以下是 Spring 5 的模块结构图：<br><img src="/Spring/20210302160946473.png"></p>
+<p>进入下载的Spring压缩包下面的libs目录中，将其中的核心jar包导入项目新建的libs文件</p>
+<p><img src="/Spring/20210302161502546.png"></p>
+<p>额外导入<code>commons-logging-1.2.jar</code>，下载链接：<a target="_blank" rel="noopener" href="http://commons.apache.org/proper/commons-logging/download_logging.cgi">http://commons.apache.org/proper/commons-logging/download_logging.cgi</a></p>
+<p>File -&gt; Project Settings -&gt; Modules -&gt; Dependencies</p>
+<p>在src目录下创建Spring配置文件，<code>bean1.xml</code></p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+	 <div style="text-align:center;color: #ccc;font-size:14px;">
+    ------------- 本文结束 <i class="fa fa-heart-o"></i> 感谢您的阅读-------------
+     </div>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/learn/" rel="tag"><i class="fa fa-tag"></i>learn</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="prev" title="数据结构与算法">
+      <i class="fa fa-chevron-left"></i> 数据结构与算法
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2021/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/2021/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2021/page/3/">3</a><span class="page-number current">4</span>
-  </nav>
+  
+  
 
 
 
@@ -303,6 +356,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E4%BB%80%E4%B9%88%E6%98%AFSpring%EF%BC%9F"><span class="nav-text">一、什么是Spring？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring"><span class="nav-text">Spring</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD"><span class="nav-text">下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spring%E6%9E%B6%E6%9E%84%E5%9B%BE%EF%BC%8CSpring%E7%94%B1%E5%93%AA%E4%BA%9B%E6%A8%A1%E5%9D%97%E7%BB%84%E6%88%90%EF%BC%9F"><span class="nav-text">Spring架构图，Spring由哪些模块组成？</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
