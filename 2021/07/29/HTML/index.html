@@ -21,30 +21,39 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="GeWen学习与生活记录">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lannistの博客">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="1 网页的组成部分页面由三部分内容组成，分别是内容（结构）、表现、行为。   内容（结构），是我们在页面中可以看到的数据。我们称之为内容。一般内容 我们使用 html 技术来展示。   表现，指的是这些内容在页面上的展示形式。比如说。布局，颜色，大小等等。一般使用 CSS 技术实现  行为，指的是页面中元素与输入设备交互的响应。一般使用 javascript 技术实现。   2 创建HTML文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML">
+<meta property="og:url" content="http://example.com/2021/07/29/HTML/index.html">
 <meta property="og:site_name" content="Lannistの博客">
-<meta property="og:description" content="GeWen学习与生活记录">
+<meta property="og:description" content="1 网页的组成部分页面由三部分内容组成，分别是内容（结构）、表现、行为。   内容（结构），是我们在页面中可以看到的数据。我们称之为内容。一般内容 我们使用 html 技术来展示。   表现，指的是这些内容在页面上的展示形式。比如说。布局，颜色，大小等等。一般使用 CSS 技术实现  行为，指的是页面中元素与输入设备交互的响应。一般使用 javascript 技术实现。   2 创建HTML文件">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/HTML/QQ%E6%88%AA%E5%9B%BE20210801141806.png">
+<meta property="og:image" content="http://example.com/HTML/QQ%E6%88%AA%E5%9B%BE20210801141830.png">
+<meta property="og:image" content="http://example.com/HTML/QQ%E6%88%AA%E5%9B%BE20210801144925.png">
+<meta property="og:image" content="http://example.com/HTML/QQ%E6%88%AA%E5%9B%BE20210801145808.png">
+<meta property="og:image" content="http://example.com/HTML/QQ%E6%88%AA%E5%9B%BE20210801151549.png">
+<meta property="article:published_time" content="2021-07-29T14:52:44.000Z">
+<meta property="article:modified_time" content="2021-08-01T15:34:56.024Z">
 <meta property="article:author" content="Lannist">
+<meta property="article:tag" content="learn">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/HTML/QQ%E6%88%AA%E5%9B%BE20210801141806.png">
 
-<link rel="canonical" href="http://example.com/">
+<link rel="canonical" href="http://example.com/2021/07/29/HTML/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Lannistの博客</title>
+  <title>HTML | Lannistの博客</title>
   
 
 
@@ -183,9 +192,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -201,10 +211,9 @@
       <meta itemprop="name" content="Lannistの博客">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/07/29/HTML/" class="post-title-link" itemprop="url">HTML</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          HTML
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -226,6 +235,13 @@
             </span>
 
           
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
@@ -236,7 +252,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="1-网页的组成部分"><a href="#1-网页的组成部分" class="headerlink" title="1 网页的组成部分"></a>1 网页的组成部分</h2><p>页面由三部分内容组成，分别是内容（结构）、表现、行为。 </p>
+        <h2 id="1-网页的组成部分"><a href="#1-网页的组成部分" class="headerlink" title="1 网页的组成部分"></a>1 网页的组成部分</h2><p>页面由三部分内容组成，分别是内容（结构）、表现、行为。 </p>
 <ul>
 <li><p>内容（结构），是我们在页面中可以看到的数据。我们称之为内容。一般内容 我们使用 html 技术来展示。 </p>
 </li>
@@ -351,712 +367,37 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">	form 标签是表单标签 </span></span><br><span class="line"><span class="comment">		action 属性设置提交的服务器地址 </span></span><br><span class="line"><span class="comment">		method 属性设置提交的方式 GET(默认值)或 POST </span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	表单提交的时候，数据没有发送给服务器的三种情况： </span></span><br><span class="line"><span class="comment">		1、表单项没有 name 属性值 </span></span><br><span class="line"><span class="comment">		2、单选、复选（下拉列表中的 option 标签）都需要添加 value 属性，以便发送给服务器 </span></span><br><span class="line"><span class="comment">		3、表单项不在提交的 form 标签中</span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">	GET 请求的特点是： </span></span><br><span class="line"><span class="comment">		1、浏览器地址栏中的地址是：action 属性[+?+请求参数] </span></span><br><span class="line"><span class="comment">		请求参数的格式是：name=value&amp;name=value </span></span><br><span class="line"><span class="comment">		2、不安全 </span></span><br><span class="line"><span class="comment">		3、它有数据长度的限制 </span></span><br><span class="line"><span class="comment">	POST 请求的特点是： </span></span><br><span class="line"><span class="comment">		1、浏览器地址栏中只有 action 属性值 </span></span><br><span class="line"><span class="comment">		2、相对于 GET 请求要安全 </span></span><br><span class="line"><span class="comment">		3、理论上没有数据长度的限制 --&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;http://localhost:8080&quot;</span> <span class="attr">method</span>=<span class="string">&quot;post&quot;</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span> <span class="attr">name</span>=<span class="string">&quot;action&quot;</span> <span class="attr">value</span>=<span class="string">&quot;login&quot;</span> /&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">h1</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span>&gt;</span>用户注册<span class="tag">&lt;/<span class="name">h1</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">table</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 用户名称：<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </span><br><span class="line">            	<span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">value</span>=<span class="string">&quot;默认值&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">td</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 用户密码：<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">value</span>=<span class="string">&quot;abc&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">td</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>性别：<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">value</span>=<span class="string">&quot;boy&quot;</span>/&gt;</span>男 </span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;radio&quot;</span> <span class="attr">name</span>=<span class="string">&quot;sex&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;checked&quot;</span> <span class="attr">value</span>=<span class="string">&quot;girl&quot;</span> /&gt;</span>女 </span><br><span class="line">                <span class="tag">&lt;/<span class="name">td</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span> 兴趣爱好：<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">checked</span>=<span class="string">&quot;checked&quot;</span> <span class="attr">value</span>=<span class="string">&quot;java&quot;</span>/&gt;</span>Java </span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">value</span>=<span class="string">&quot;js&quot;</span>/&gt;</span>JavaScript </span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;hobby&quot;</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span> <span class="attr">value</span>=<span class="string">&quot;cpp&quot;</span>/&gt;</span>C++ </span><br><span class="line">                <span class="tag">&lt;/<span class="name">td</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>国籍：<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">&quot;country&quot;</span>&gt;</span> </span><br><span class="line">                        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;none&quot;</span>&gt;</span>--请选择国籍--<span class="tag">&lt;/<span class="name">option</span>&gt;</span> </span><br><span class="line">                        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;cn&quot;</span> <span class="attr">selected</span>=<span class="string">&quot;selected&quot;</span>&gt;</span>中国<span class="tag">&lt;/<span class="name">option</span>&gt;</span> </span><br><span class="line">                        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;usa&quot;</span>&gt;</span>美国<span class="tag">&lt;/<span class="name">option</span>&gt;</span> <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;jp&quot;</span>&gt;</span>小日本<span class="tag">&lt;/<span class="name">option</span>&gt;</span> </span><br><span class="line">                    <span class="tag">&lt;/<span class="name">select</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;/<span class="name">td</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span>自我评价：<span class="tag">&lt;/<span class="name">td</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">textarea</span> <span class="attr">name</span>=<span class="string">&quot;desc&quot;</span> <span class="attr">rows</span>=<span class="string">&quot;10&quot;</span> <span class="attr">cols</span>=<span class="string">&quot;20&quot;</span>&gt;</span>我才是默认值<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;reset&quot;</span> /&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">td</span>&gt;</span> </span><br><span class="line">                <span class="tag">&lt;<span class="name">td</span> <span class="attr">align</span>=<span class="string">&quot;center&quot;</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span>/&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">td</span>&gt;</span> </span><br><span class="line">            <span class="tag">&lt;/<span class="name">tr</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;/<span class="name">table</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
-      
     </div>
 
     
     
     
+	 <div style="text-align:center;color: #ccc;font-size:14px;">
+    ------------- 本文结束 <i class="fa fa-heart-o"></i> 感谢您的阅读-------------
+     </div>
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/learn/" rel="tag"><i class="fa fa-tag"></i>learn</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">数据结构与算法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-06-10 14:53:04" itemprop="dateCreated datePublished" datetime="2021-06-10T14:53:04+08:00">2021-06-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Data-structure/" itemprop="url" rel="index"><span itemprop="name">Data structure</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="五、排序"><a href="#五、排序" class="headerlink" title="五、排序"></a>五、排序</h1><h2 id="1、常见的排序算法"><a href="#1、常见的排序算法" class="headerlink" title="1、常见的排序算法"></a>1、常见的排序算法</h2><p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.1.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/10/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/06/10/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/" class="post-title-link" itemprop="url">JDBC核心技术</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-06-10 14:53:04" itemprop="dateCreated datePublished" datetime="2021-06-10T14:53:04+08:00">2021-06-10</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JDBC/" itemprop="url" rel="index"><span itemprop="name">JDBC</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="第1章：JDBC概述"><a href="#第1章：JDBC概述" class="headerlink" title="第1章：JDBC概述"></a>第1章：JDBC概述</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/06/10/%E5%B0%9A%E7%A1%85%E8%B0%B7_%E5%AE%8B%E7%BA%A2%E5%BA%B7_JDBC.assets/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="prev" title="数据结构与算法">
+      <i class="fa fa-chevron-left"></i> 数据结构与算法
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/18/MySql7/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/18/MySql7/" class="post-title-link" itemprop="url">MySql7-视图</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-18 16:07:04" itemprop="dateCreated datePublished" datetime="2021-05-18T16:07:04+08:00">2021-05-18</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><ul>
-<li><p>视图：虚拟表,和普通表一样使用。mysql5.1版本出现的新特性，是通过表动态生成的数据。</p>
-</li>
-<li><p>视图的好处</p>
-<ul>
-<li><p>简化复杂的sql操作，不必知道它的查询细节</p>
-</li>
-<li><p>保护数据，提高安全性</p>
-</li>
-<li><p>多个地方用到同样的查询结果</p></li></ul></li></ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/18/MySql7/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/17/MySql6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/17/MySql6/" class="post-title-link" itemprop="url">MySql6-DDL数据定义语言+TCL事务控制语言</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-17 22:07:04" itemprop="dateCreated datePublished" datetime="2021-05-17T22:07:04+08:00">2021-05-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="DDL语言"><a href="#DDL语言" class="headerlink" title="DDL语言"></a>DDL语言</h1><h2 id="常见的约束"><a href="#常见的约束" class="headerlink" title="常见的约束"></a>常见的约束</h2><ul>
-<li><p>含义：一种限制，用于限制表中的数据，为了保证表中的数据的准确和可靠性。</p>
-</li>
-<li><p>分类</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">六大约束</span><br><span class="line">	NOT NULL：非空，用于保证该字段的值不能为空</span><br><span class="line">	比如姓名、学号等</span><br><span class="line">	DEFAULT:默认，用于保证该字段有默认值</span><br><span class="line">	比如性别</span><br><span class="line">	PRIMARY KEY:主键，用于保证该字段的值具有唯一性，并且非空</span><br><span class="line">	比如学号、员工编号等</span><br><span class="line">	UNIQUE:唯一，用于保证该字段的值具有唯一性，可以为空</span><br><span class="line">	比如座位号</span><br><span class="line">	CHECK:检查约束【mysql中不支持】</span><br><span class="line">	比如年龄、性别</span><br><span class="line">	FOREIGN KEY:外键，用于限制两个表的关系，用于保证该字段的值必须来自于主表的关联列的值</span><br><span class="line">		在从表添加外键约束，用于引用主表中某列的值</span><br><span class="line">	比如学生表的专业编号，员工表的部门编号，员工表的工种编号</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/17/MySql6/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/17/MySql5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/17/MySql5/" class="post-title-link" itemprop="url">MySql5-DML数据操作语言+DDL数据定义语言</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-17 10:07:04" itemprop="dateCreated datePublished" datetime="2021-05-17T10:07:04+08:00">2021-05-17</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="DML语言"><a href="#DML语言" class="headerlink" title="DML语言"></a>DML语言</h1><ul>
-<li><p>插入：insert</p>
-<p>修改：update</p>
-<p>删除：delete</p></li></ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/17/MySql5/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/16/MySql4/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/16/MySql4/" class="post-title-link" itemprop="url">MySql4-DQL数据查询语言后五项</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-16 22:28:04" itemprop="dateCreated datePublished" datetime="2021-05-16T22:28:04+08:00">2021-05-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/2021/05/16/MySql4/1.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/16/MySql4/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/16/MySql3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/16/MySql3/" class="post-title-link" itemprop="url">MySql3-常见函数</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-16 20:30:48" itemprop="dateCreated datePublished" datetime="2021-05-16T20:30:48+08:00">2021-05-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>字符函数、数学函数、日期函数、其他函数、流程控制函数</p>
-<p>单行函数：字符函数、数学函数、日期函数、其他函数、流程控制函数</p>
-<p>分组函数</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/16/MySql3/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/16/MySql2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/16/MySql2/" class="post-title-link" itemprop="url">MySql2-DQL数据查询语言前五项</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-16 19:30:48" itemprop="dateCreated datePublished" datetime="2021-05-16T19:30:48+08:00">2021-05-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/2021/05/16/MySql2/1.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/16/MySql2/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/16/MySql1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="Lannist">
-      <meta itemprop="description" content="GeWen学习与生活记录">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Lannistの博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/05/16/MySql1/" class="post-title-link" itemprop="url">MySql1-mysql介绍</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-05-16 17:59:55" itemprop="dateCreated datePublished" datetime="2021-05-16T17:59:55+08:00">2021-05-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/MySql/" itemprop="url" rel="index"><span itemprop="name">MySql</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/2021/05/16/MySql1/1.png"></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/05/16/MySql1/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 
@@ -1108,6 +449,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%BD%91%E9%A1%B5%E7%9A%84%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86"><span class="nav-text">1 网页的组成部分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%88%9B%E5%BB%BAHTML%E6%96%87%E4%BB%B6"><span class="nav-text">2 创建HTML文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-HTML%E6%96%87%E4%BB%B6%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83"><span class="nav-text">3 HTML文件书写规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-HTML%E6%A0%87%E7%AD%BE"><span class="nav-text">4 HTML标签</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE%E8%AF%AD%E6%B3%95%EF%BC%9A"><span class="nav-text">标签语法：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6"><span class="nav-text">5.2 特殊字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-%E6%A0%87%E9%A2%98%E6%A0%87%E7%AD%BE"><span class="nav-text">5.3 标题标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-%E8%B6%85%E9%93%BE%E6%8E%A5"><span class="nav-text">5.4 超链接*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-5-%E5%88%97%E8%A1%A8%E6%A0%87%E7%AD%BE"><span class="nav-text">5.5 列表标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-6-img%E6%A0%87%E7%AD%BE"><span class="nav-text">5.6 img标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-7-%E8%A1%A8%E6%A0%BC%E6%A0%87%E7%AD%BE"><span class="nav-text">5.7 表格标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-8-%E8%B7%A8%E8%A1%8C%E8%B7%A8%E5%88%97%E8%A1%A8%E6%A0%BC%E6%A0%87%E7%AD%BE"><span class="nav-text">5.8 跨行跨列表格标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-9-iframe%E6%A1%86%E6%9E%B6%E6%A0%87%E7%AD%BE%EF%BC%88%E5%86%85%E5%B5%8C%E7%AA%97%E5%8F%A3%EF%BC%89"><span class="nav-text">5.9 iframe框架标签（内嵌窗口）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-10-%E8%A1%A8%E5%8D%95%E6%A0%87%E7%AD%BE"><span class="nav-text">5.10 表单标签*</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
