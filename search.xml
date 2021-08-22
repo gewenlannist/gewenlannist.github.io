@@ -10,7 +10,7 @@
 
 
 
-<h2 id="2-CSS语法规则"><a href="#2-CSS语法规则" class="headerlink" title="2 CSS语法规则"></a>2 CSS语法规则</h2><p><img src="/2021/08/10/CSS/QQ%E6%88%AA%E5%9B%BE20210810174139.png"></p>
+<h2 id="2-CSS语法规则"><a href="#2-CSS语法规则" class="headerlink" title="2 CSS语法规则"></a>2 CSS语法规则</h2><p><img src="/CSS/QQ%E6%88%AA%E5%9B%BE20210810174139.png"></p>
 <ul>
 <li><p><strong>选择器</strong>：浏览器根据“选择器”决定受 CSS 样式影响的 HTML 元素（标签）。 </p>
 </li>
@@ -30,7 +30,7 @@
 
 
 
-<h2 id="CSS和HTML结合"><a href="#CSS和HTML结合" class="headerlink" title="CSS和HTML结合"></a>CSS和HTML结合</h2><h3 id="2-1-第一种"><a href="#2-1-第一种" class="headerlink" title="2.1 第一种"></a>2.1 第一种</h3><ul>
+<h2 id="3-CSS和HTML结合"><a href="#3-CSS和HTML结合" class="headerlink" title="3 CSS和HTML结合"></a>3 CSS和HTML结合</h2><h3 id="2-1-第一种"><a href="#2-1-第一种" class="headerlink" title="2.1 第一种"></a>2.1 第一种</h3><ul>
 <li><p>在标签的 style 属性上设置”key:value value;”，修改标签样式</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!--需求 1：分别定义两个 div、span 标签，分别修改每个 div 标签的样式为：边框 1 个像素，实线，红色。--&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;border: 1px solid red;width = &quot;</span><span class="attr">100</span>&quot; &quot;&gt;</span>div 标签 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;border: 1px solid red;&quot;</span>&gt;</span>div 标签 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;border: 1px solid red;&quot;</span>&gt;</span>span 标签 1<span class="tag">&lt;/<span class="name">span</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;border: 1px solid red;&quot;</span>&gt;</span>span 标签 2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -58,25 +58,93 @@
 
 
 
+<h2 id="4-CSS选择器"><a href="#4-CSS选择器" class="headerlink" title="4 CSS选择器"></a>4 CSS选择器</h2><h3 id="4-1标签名选择器"><a href="#4-1标签名选择器" class="headerlink" title="4.1标签名选择器"></a>4.1标签名选择器</h3><p>标签名选择器的格式是： </p>
+<p>​    标签名{ </p>
+<p>​    属性：值; </p>
+<p>​    }</p>
+<p>标签名选择器，可以决定哪些标签被动的使用这个样式。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS 选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span> </span><br><span class="line">		div&#123;</span><br><span class="line">            border: 1px solid yellow; </span><br><span class="line">            color: blue; </span><br><span class="line">            font-size: 30px; </span><br><span class="line">        &#125;</span><br><span class="line">        span&#123; </span><br><span class="line">            border: 5px dashed blue;</span><br><span class="line">            color: yellow; </span><br><span class="line">            font-size: 20px; </span><br><span class="line">        &#125; </span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!-- 需求 1：在所有 div 标签上修改字体颜色为蓝色，字体大小 30 个像素。边框为 1 像素黄色实线。</span></span><br><span class="line"><span class="comment">			并且修改所有 span 标签的字体颜色为黄色，字体大小 20 个像素。边框为 5 像素蓝色虚线。</span></span><br><span class="line"><span class="comment">	--&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>div 标签 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>div 标签 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>span 标签 1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>span 标签 2<span class="tag">&lt;/<span class="name">span</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="4-2id选择器"><a href="#4-2id选择器" class="headerlink" title="4.2id选择器"></a>4.2id选择器</h3><p>id 选择器的格式是： </p>
+<p>​    #id 属性值{ </p>
+<p>​            属性：值; </p>
+<p>​    }</p>
+<p>id 选择器，可以让我们通过 id 属性选择性的去使用这个样式。 </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>ID 选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span> </span><br><span class="line"><span class="css">		<span class="selector-id">#id001</span>&#123; </span></span><br><span class="line">            color: blue; </span><br><span class="line">            font-size: 30px;</span><br><span class="line">            border: 1px yellow solid;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#id002</span>&#123; </span></span><br><span class="line">            color: red; </span><br><span class="line">            font-size: 20px;</span><br><span class="line">            border: 5px blue dotted ; </span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!-- 需求 1：分别定义两个 div 标签， 第一个 div 标签定义 id 为 id001 ，然后根据 id 属性定义 css 样式修改字体颜色为蓝色， 字体大小 30 个像素。边框为 1 像素黄色实线。 第二个 div 标签定义 id 为 id002 ，然后根据 id 属性定义 css 样式 修改的字体颜色为红色，字体大小 20 个像素。 边框为 5 像素蓝色点线。</span></span><br><span class="line"><span class="comment">--&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;id002&quot;</span>&gt;</span>div 标签 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;id001&quot;</span>&gt;</span>div 标签 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="4-3-class选择器（类选择器）"><a href="#4-3-class选择器（类选择器）" class="headerlink" title="4.3 class选择器（类选择器）"></a>4.3 class选择器（类选择器）</h3><p>class 类型选择器的格式是： </p>
+<p>​        **.**class 属性值{ </p>
+<p>​            属性：值; </p>
+<p>​        } </p>
+<p>class 类型选择器，可以通过 class 属性有效的选择性地去使用这个样式。</p>
+<p>id 只能一个 class 可以多个</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>class 类型选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span> </span><br><span class="line"><span class="css">        <span class="selector-class">.class01</span>&#123; </span></span><br><span class="line">            color: blue; </span><br><span class="line">            font-size: 30px;</span><br><span class="line">            border: 1px solid yellow; </span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.class02</span>&#123; </span></span><br><span class="line">            color: grey; </span><br><span class="line">            font-size: 26px;</span><br><span class="line">            border: 1px solid red; </span><br><span class="line">        &#125; </span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!--需求 1：修改 class 属性值为 class01 的 span 或 div 标签，字体颜色为蓝色，字体大小 30 个像素。边框为 1 像素黄色实线。 </span></span><br><span class="line"><span class="comment">		需求 2：修改 class 属性值为 class02 的 div 标签，字体颜色为灰色，字体大小 26 个像素。边框为 1 像素红色实线。 --&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;class02&quot;</span>&gt;</span>div 标签<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;class02&quot;</span>&gt;</span>div 标签<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;class02&quot;</span>&gt;</span>span 标签<span class="tag">&lt;/<span class="name">span</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>span 标签 2<span class="tag">&lt;/<span class="name">span</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="4-4-组合选择器"><a href="#4-4-组合选择器" class="headerlink" title="4.4 组合选择器"></a>4.4 组合选择器</h3><p>组合选择器的格式是： </p>
+<p>​    选择器 1，选择器 2，选择器 n{ </p>
+<p>​        属性：值; </p>
+<p>​    } </p>
+<p>组合选择器可以让多个选择器共用同一个 css 样式代码。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>class 类型选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span> </span><br><span class="line"><span class="css">        <span class="selector-class">.class01</span> , <span class="selector-id">#id01</span>&#123; </span></span><br><span class="line">			color: blue; </span><br><span class="line">            font-size: 20px; </span><br><span class="line">            border: 1px yellow solid; &#125; </span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!-- 需求 1：修改 class=&quot;class01&quot; 的 div 标签 和 id=&quot;id01&quot; 所有的 span 标签， 字体颜色为蓝色，字体大小 20 个像素。边框为 1 像素黄色实线。 --&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;id01&quot;</span>&gt;</span>div 标签 class01<span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span> /&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> &gt;</span>span 标签<span class="tag">&lt;/<span class="name">span</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span> /&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>div 标签<span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span> /&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>div 标签 id01<span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h3 id="4-5常用样式"><a href="#4-5常用样式" class="headerlink" title="4.5常用样式"></a>4.5常用样式</h3><ul>
+<li>字体颜色 </li>
+</ul>
+<p>color：red； </p>
+<p>颜色可以写颜色名如：black, blue, red, green 等 </p>
+<p>颜色也可以写 rgb 值和十六进制表示值：如 rgb(255,0,0)，#00F6DE，如果写十六进制值必 </p>
+<p>须加#</p>
+<ul>
+<li>宽度</li>
+</ul>
+<p>width:19px; </p>
+<p>宽度可以写像素值：19px； </p>
+<p>也可以写百分比值：20%；</p>
+<ul>
+<li>高度</li>
+</ul>
+<p>height:20px; </p>
+<p>高度可以写像素值：19px； </p>
+<p>也可以写百分比值：20%； </p>
+<ul>
+<li>背景颜色 </li>
+</ul>
+<p>background-color:#0F2D4C </p>
+<ul>
+<li>字体样式： </li>
+</ul>
+<p>color：#FF0000；字体颜色红色 </p>
+<p>font-size：20px; 字体大小 </p>
+<ul>
+<li>红色 1 像素实线边框 </li>
+</ul>
+<p>border：1px solid red; </p>
+<ul>
+<li>DIV 居中 </li>
+</ul>
+<p>margin-left: auto; </p>
+<p>margin-right: auto; </p>
+<ul>
+<li>文本居中： </li>
+</ul>
+<p>text-align: center;9、超连接去下划线 </p>
+<p>text-decoration: none; </p>
+<ul>
+<li><p>表格细线 </p>
+<p>table { </p>
+<p>​    border: 1px solid black; /<em>设置边框</em>/ </p>
+<p>​    border-collapse: collapse; /<em>将边框合并</em>/ </p>
+<p>}</p>
+<p>td,th {</p>
+<p>​    border: 1px solid black; /<em>设置边框</em>/ </p>
+<p>} </p>
+</li>
+</ul>
+<p>11、列表去除修饰 </p>
+<p>​    ul { </p>
+<p>​        list-style: none; </p>
+<p>​    } </p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span> </span><br><span class="line">    div&#123;</span><br><span class="line">        color: red; </span><br><span class="line">        border: 1px yellow solid; </span><br><span class="line">        width: 300px; </span><br><span class="line">        height: 300px;</span><br><span class="line">        background-color: green;</span><br><span class="line">        font-size: 30px; </span><br><span class="line">        margin-left: auto; </span><br><span class="line">        margin-right: auto;</span><br><span class="line">        text-align: center; </span><br><span class="line">    &#125;</span><br><span class="line">    table&#123; </span><br><span class="line">        border: 1px red solid;</span><br><span class="line">        border-collapse: collapse; </span><br><span class="line">    &#125;</span><br><span class="line">    td&#123;</span><br><span class="line">        border: 1px red solid; </span><br><span class="line">    &#125;</span><br><span class="line">    a&#123; </span><br><span class="line">        text-decoration: none; </span><br><span class="line">    &#125;</span><br><span class="line">    ul&#123; </span><br><span class="line">        list-style: none;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -1708,7 +1776,7 @@ select * from admin $</code></pre>
   <entry>
     <title>数据结构与算法</title>
     <url>/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</url>
-    <content><![CDATA[<h1 id="五、排序"><a href="#五、排序" class="headerlink" title="五、排序"></a>五、排序</h1><h2 id="1、常见的排序算法"><a href="#1、常见的排序算法" class="headerlink" title="1、常见的排序算法"></a>1、常见的排序算法</h2><p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.1.png"></p>
+    <content><![CDATA[<h1 id="五、排序"><a href="#五、排序" class="headerlink" title="五、排序"></a>五、排序</h1><h2 id="1、常见的排序算法"><a href="#1、常见的排序算法" class="headerlink" title="1、常见的排序算法"></a>1、常见的排序算法</h2><p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.1.png"></p>
 <a id="more"></a>
 
 <h2 id="2、算法的时间复杂度"><a href="#2、算法的时间复杂度" class="headerlink" title="2、算法的时间复杂度"></a>2、算法的时间复杂度</h2><h3 id="时间频度和时间复杂度"><a href="#时间频度和时间复杂度" class="headerlink" title="时间频度和时间复杂度"></a>时间频度和时间复杂度</h3><p><strong>时间频度T(n)</strong></p>
@@ -1738,7 +1806,7 @@ select * from admin $</code></pre>
 <h4 id="立方阶O-n3"><a href="#立方阶O-n3" class="headerlink" title="立方阶O(n3)"></a>立方阶O(n3)</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;n; i++) &#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j&lt;n; j++) &#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>; k&lt;n; k++) &#123;</span><br><span class="line">			<span class="comment">//循环体</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;Copy</span><br></pre></td></tr></table></figure>
 
 <p>可以看出平方阶、立方阶的复杂度主要是否循环嵌套了几层来决定的，所以要找程序中最复杂的那段。</p>
-<h2 id="3、排序算法的时间复杂度"><a href="#3、排序算法的时间复杂度" class="headerlink" title="3、排序算法的时间复杂度"></a>3、排序算法的时间复杂度</h2><p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.2.png"></p>
+<h2 id="3、排序算法的时间复杂度"><a href="#3、排序算法的时间复杂度" class="headerlink" title="3、排序算法的时间复杂度"></a>3、排序算法的时间复杂度</h2><p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.2.png"></p>
 <p><strong><em>插入  堆  归并  快速排序</em></strong></p>
 <p>不稳：相等的两个数，排序之后，相对顺序可能会改变。</p>
 <p>​        《忆排序》</p>
@@ -1802,7 +1870,7 @@ select * from admin $</code></pre>
 <li>每趟排序，根据对应的增量 ti，将待排序列分割成若干长度为 m 的子序列，分别对各子表进行直接插入排序。仅增量因子为 1 时，整个序列作为一个表来处理，表长度即为整个序列的长度。</li>
 </ul>
 <p><strong>示意图</strong></p>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.3.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.3.png"></p>
 <p><strong>代码</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo4</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">int</span>[] arr = &#123;<span class="number">3</span>, <span class="number">6</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">0</span>&#125;;</span><br><span class="line">      <span class="keyword">int</span> temp;</span><br><span class="line">      <span class="comment">//将数组分为gap组,每个组内部进行插入排序</span></span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> gap = arr.length/<span class="number">2</span>; gap&gt;<span class="number">0</span>; gap /= <span class="number">2</span>) &#123;</span><br><span class="line">         <span class="comment">//i用来指向未排序数组的首个元素，前面gap个当作已排序</span></span><br><span class="line">         <span class="keyword">for</span> (<span class="keyword">int</span> i = gap; i &lt; arr.length; i++) &#123;</span><br><span class="line">             	<span class="comment">//相当i对应的数与同一组前面的进行插入排序</span></span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &gt; gap - <span class="number">1</span> &amp;&amp; arr[j] &lt; arr[j - gap]; j -= gap) &#123;</span><br><span class="line">                    <span class="keyword">int</span> temp = arr[j];</span><br><span class="line">                    arr[j] = arr[j - gap];</span><br><span class="line">                    arr[j - gap] = temp;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i : arr) &#123;</span><br><span class="line">         System.out.println(i);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -1819,14 +1887,14 @@ select * from admin $</code></pre>
 <li>重复上一步 直到<strong>某一指针达到序列尾</strong></li>
 <li>将另一序列剩下的所有元素直接复制到合并序列尾</li>
 </ul>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.4.png"></p>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.5.png"></p>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.6.png"></p>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.7.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.4.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.5.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.6.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.7.png"></p>
 <p><strong>此时第二个序列的指针已经到达末尾，则将第一个序列中剩下的元素全部放入和合并序列末尾</strong></p>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.8.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.8.png"></p>
 <p><strong>代码</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo6</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">1</span>, <span class="number">8</span>, <span class="number">6</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>&#125;;</span><br><span class="line">        mergeSort(arr, <span class="number">0</span>, arr.length - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i : arr) &#123;</span><br><span class="line">            System.out.print(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 将分解的序列进行合并，合并的同时完成排序</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> arr 待合并的数组</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> left 数组左边界</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> right 数组右边界</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//当left == right 直接返回</span></span><br><span class="line">        <span class="keyword">if</span>(left == right) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">int</span> mid = (left+right)/<span class="number">2</span>;</span><br><span class="line">		</span><br><span class="line">        mergeSort(arr, left, mid);<span class="comment">//先分 再排</span></span><br><span class="line">        mergeSort(arr, mid+<span class="number">1</span>, right);</span><br><span class="line">        merge(arr, left, right);</span><br><span class="line">      </span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">      <span class="comment">//两个序列的分界点</span></span><br><span class="line">      <span class="keyword">int</span> mid = (left+right)/<span class="number">2</span>;</span><br><span class="line">      <span class="keyword">int</span>[] temp = <span class="keyword">new</span> <span class="keyword">int</span>[right - left + <span class="number">1</span>];</span><br><span class="line">      <span class="comment">//temp数组中插入的位置</span></span><br><span class="line">      <span class="keyword">int</span> tempLeft = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">int</span> arrLeft = left;</span><br><span class="line">      <span class="comment">//第二个序列的首元素下标</span></span><br><span class="line">      <span class="keyword">int</span> arrRight = mid+<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">while</span>(arrLeft&lt;=mid &amp;&amp; arrRight&lt;=right) &#123;</span><br><span class="line">         <span class="comment">//如果第一个序列的元素小于第二序列的元素，就将其放入temp中</span></span><br><span class="line">         <span class="keyword">if</span>(arr[arrLeft] &lt;= arr[arrRight]) &#123;</span><br><span class="line">            temp[tempLeft] = arr[arrLeft];</span><br><span class="line">            arrLeft++;</span><br><span class="line">         &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            temp[tempLeft] = arr[arrRight];</span><br><span class="line">            arrRight++;</span><br><span class="line">         &#125;</span><br><span class="line">         tempLeft++;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="comment">//将不为空的序列中的元素依次放入temp中</span></span><br><span class="line">      <span class="keyword">while</span> (arrLeft &lt;= mid) &#123;</span><br><span class="line">         temp[tempLeft] = arr[arrLeft];</span><br><span class="line">         tempLeft++;</span><br><span class="line">         arrLeft++;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">while</span> (arrRight &lt;= right) &#123;</span><br><span class="line">         temp[tempLeft] = arr[arrRight];</span><br><span class="line">         tempLeft++;</span><br><span class="line">         arrRight++;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//将临时数组中的元素放回数组arr中</span></span><br><span class="line">      tempLeft = <span class="number">0</span>;</span><br><span class="line">      arrLeft = left;</span><br><span class="line">      <span class="keyword">while</span> (arrLeft &lt;= right) &#123;</span><br><span class="line">         arr[arrLeft] = temp[tempLeft];</span><br><span class="line">         arrLeft++;</span><br><span class="line">         tempLeft++;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo6</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">1</span>, <span class="number">8</span>, <span class="number">6</span>, <span class="number">2</span>, <span class="number">5</span>, <span class="number">4</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">5</span>&#125;;</span><br><span class="line">        mergeSort(arr, <span class="number">0</span>, arr.length - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i : arr) &#123;</span><br><span class="line">            System.out.print(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 将分解的序列进行合并，合并的同时完成排序</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> arr 待合并的数组</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> left 数组左边界</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> right 数组右边界</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//当left == right 直接返回</span></span><br><span class="line">        <span class="keyword">if</span>(left == right) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">int</span> mid = left+(right-left)/<span class="number">2</span>;</span><br><span class="line">		</span><br><span class="line">        mergeSort(arr, left, mid);<span class="comment">//先分 再排</span></span><br><span class="line">        mergeSort(arr, mid+<span class="number">1</span>, right);</span><br><span class="line">        merge(arr, left, right);</span><br><span class="line">      </span><br><span class="line">   &#125;</span><br><span class="line">    </span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">      <span class="comment">//两个序列的分界点</span></span><br><span class="line">      <span class="keyword">int</span> mid = (left+right)/<span class="number">2</span>;</span><br><span class="line">      <span class="keyword">int</span>[] temp = <span class="keyword">new</span> <span class="keyword">int</span>[right - left + <span class="number">1</span>];</span><br><span class="line">      <span class="comment">//temp数组中插入的位置</span></span><br><span class="line">      <span class="keyword">int</span> tempLeft = <span class="number">0</span>;</span><br><span class="line">      <span class="keyword">int</span> arrLeft = left;</span><br><span class="line">      <span class="comment">//第二个序列的首元素下标</span></span><br><span class="line">      <span class="keyword">int</span> arrRight = mid+<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">while</span>(arrLeft&lt;=mid &amp;&amp; arrRight&lt;=right) &#123;</span><br><span class="line">         <span class="comment">//如果第一个序列的元素小于第二序列的元素，就将其放入temp中</span></span><br><span class="line">         <span class="keyword">if</span>(arr[arrLeft] &lt;= arr[arrRight]) &#123;</span><br><span class="line">            temp[tempLeft] = arr[arrLeft];</span><br><span class="line">            arrLeft++;</span><br><span class="line">         &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            temp[tempLeft] = arr[arrRight];</span><br><span class="line">            arrRight++;</span><br><span class="line">         &#125;</span><br><span class="line">         tempLeft++;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="comment">//将不为空的序列中的元素依次放入temp中</span></span><br><span class="line">      <span class="keyword">while</span> (arrLeft &lt;= mid) &#123;</span><br><span class="line">         temp[tempLeft] = arr[arrLeft];</span><br><span class="line">         tempLeft++;</span><br><span class="line">         arrLeft++;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">while</span> (arrRight &lt;= right) &#123;</span><br><span class="line">         temp[tempLeft] = arr[arrRight];</span><br><span class="line">         tempLeft++;</span><br><span class="line">         arrRight++;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//将临时数组中的元素放回数组arr中</span></span><br><span class="line">      tempLeft = <span class="number">0</span>;</span><br><span class="line">      arrLeft = left;</span><br><span class="line">      <span class="keyword">while</span> (arrLeft &lt;= right) &#123;</span><br><span class="line">         arr[arrLeft] = temp[tempLeft];</span><br><span class="line">         arrLeft++;</span><br><span class="line">         tempLeft++;</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>语言中对象的排序需要稳定，一般用的是归并排序，java中用的是Timsort，改进的归并排序</li>
@@ -1851,7 +1919,7 @@ select * from admin $</code></pre>
 <li><p>先统计每个数的个数，对应数组值+1</p>
 </li>
 <li><p>根据数组的值来从小到大列出多少个值</p>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.9.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.9.png"></p>
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] arr = &#123;<span class="number">5</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[arr.length];</span><br><span class="line">        <span class="comment">//计数数组，此例子范围0-9</span></span><br><span class="line">        <span class="keyword">int</span>[] count = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">50</span>];</span><br><span class="line">        <span class="comment">//计数</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">            count[arr[i]]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//累加数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; count.length; i++) &#123;</span><br><span class="line">            count[i] = count[i] + count[i - <span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//累加数组的值-1对应结果该数最后一个的数组索引</span></span><br><span class="line">        <span class="comment">//必须从后向前，为了保证稳定，本来在后就排后面</span></span><br><span class="line">        <span class="comment">//每次赋一个值，count计数就减1，先减</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = arr.length - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            result[--count[arr[i]]] = arr[i];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(Arrays.toString(result));</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -1868,20 +1936,20 @@ select * from admin $</code></pre>
 </ul>
 </li>
 </ul>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.10.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.10.png"></p>
 <p><strong>按照个位，放到对应的桶中</strong></p>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.11.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.11.png"></p>
 <p><strong>依次取出，同一个桶中有多个元素的，先放入的先取出</strong></p>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.12.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.12.png"></p>
 <p><strong>再按照十位，放到对应的桶中，个位数前面补0</strong></p>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.13.png"></p>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.14.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.13.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.14.png"></p>
 <p><strong>再按照百位，放到对应的桶中，个位数和十位数前面补0</strong></p>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.15.png"></p>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.16.png"></p>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.17.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.15.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.16.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.17.png"></p>
 <p><strong>当所有的数都在0号桶时，依次取出元素，这时顺序即为排好后的顺序</strong></p>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.18.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.18.png"></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo7</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">int</span>[] arr = &#123;<span class="number">43</span>, <span class="number">52</span>, <span class="number">1</span>, <span class="number">89</span>, <span class="number">190</span>&#125;;</span><br><span class="line">      CardinalitySort cardinalitySort = <span class="keyword">new</span> CardinalitySort();</span><br><span class="line">      cardinalitySort.sort(arr);</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> a : arr) &#123;</span><br><span class="line">         System.out.println(a);</span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CardinalitySort</span> </span>&#123;</span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 进行基数排序</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> arr 待排序的数组</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">      <span class="comment">//创建一个二维数组，用于表示桶</span></span><br><span class="line">      <span class="comment">//桶的个数固定为10个（个位是0~9），最大容量由数组的长度决定</span></span><br><span class="line">      <span class="keyword">int</span> maxSize = arr.length;</span><br><span class="line">      <span class="keyword">int</span>[][] bucket = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>][maxSize];</span><br><span class="line">      <span class="comment">//用于记录每个桶中有多少个元素</span></span><br><span class="line">      <span class="keyword">int</span>[] elementCounts = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line"></span><br><span class="line">      <span class="comment">//获得该数组中最大元素的位数</span></span><br><span class="line">      <span class="keyword">int</span> maxDigits = getMaxDigits(arr);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//将数组中的元素放入桶中, step是在求数组位数时，需要除以的倍数</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> time = <span class="number">1</span>, step = <span class="number">1</span>; time&lt;=maxDigits; time++, step *= <span class="number">10</span>) &#123;</span><br><span class="line">         <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;arr.length; i++) &#123;</span><br><span class="line">            <span class="comment">//取出所需的位数</span></span><br><span class="line">            <span class="keyword">int</span> digits = arr[i] / step % <span class="number">10</span>;</span><br><span class="line">            <span class="comment">//放入到对应的桶中 [digits]代表桶的编号</span></span><br><span class="line">            <span class="comment">//[elementCounts[digits]]代表放入该桶的位置</span></span><br><span class="line">            bucket[digits][elementCounts[digits]] = arr[i];</span><br><span class="line">            <span class="comment">//桶中元素个数+1</span></span><br><span class="line">            elementCounts[digits]++;</span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line">         <span class="comment">//将桶中的元素重新放回到数组中</span></span><br><span class="line">         <span class="comment">//用于记录应该放入原数组的哪个位置</span></span><br><span class="line">         <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">         <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;<span class="number">10</span>; i++) &#123;</span><br><span class="line">            <span class="comment">//从桶中按放入顺序依次取出元素，放入原数组</span></span><br><span class="line">            <span class="keyword">int</span> position = <span class="number">0</span>;</span><br><span class="line">            <span class="comment">//桶中有元素才取出</span></span><br><span class="line">            <span class="keyword">while</span> (elementCounts[i] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">               arr[index] = bucket[i][position];</span><br><span class="line">               position++;</span><br><span class="line">               elementCounts[i]--;</span><br><span class="line">               index++;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 得到该数组中最大元素的位数</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@param</span> arr 待求数组</span></span><br><span class="line"><span class="comment">    * <span class="doctag">@return</span> 最大元素的位数</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMaxDigits</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">int</span> max = arr[<span class="number">0</span>];</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;arr.length; i++) &#123;</span><br><span class="line">         <span class="keyword">if</span>(arr[i] &gt; max) &#123;</span><br><span class="line">            max = arr[i];</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="comment">//将最大值转为字符串，它的长度就是它的位数</span></span><br><span class="line">      <span class="keyword">int</span> digits = (max + <span class="string">&quot;&quot;</span>).length();</span><br><span class="line">      <span class="keyword">return</span> digits;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -1905,8 +1973,8 @@ select * from admin $</code></pre>
 <li><p>一般升序排序采用大顶堆，降序排列使用小顶堆</p>
 </li>
 </ul>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.19.png"></p>
-<p><img src="/2021/06/10/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.20.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.19.png"></p>
+<p><img src="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/5/5.20.png"></p>
 <p><strong>排序思路</strong></p>
 <ul>
 <li>堆是一种树结构，但是排序中会将堆进行<strong>顺序存储</strong>（变为数组结构）</li>
@@ -2932,6 +3000,172 @@ select * from admin $</code></pre>
 ]]></content>
       <categories>
         <category>JDBC</category>
+      </categories>
+      <tags>
+        <tag>learn</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript</title>
+    <url>/2021/08/18/JavaScript/</url>
+    <content><![CDATA[<h2 id="1-JavaScript-介绍"><a href="#1-JavaScript-介绍" class="headerlink" title="1 JavaScript 介绍"></a>1 JavaScript 介绍</h2><p>Javascript 语言诞生主要是完成页面的数据验证。因此它运行在客户端，需要运行浏览器来解析执行 JavaScript 代码。 </p>
+<p>JS 是 Netscape 网景公司的产品，最早取名为 LiveScript;为了吸引更多 java 程序员。更名为 JavaScript。 </p>
+<p>JS 是弱类型，Java 是强类型。 定义的变量不可以改类型是强类型</p>
+<p>特点： </p>
+<p>​    交互性（它可以做的就是信息的动态交互） </p>
+<p>​    安全性（不允许直接访问本地硬盘） </p>
+<p>​    跨平台性（只要是可以解释 JS 的浏览器都可以执行，和平台无关）</p>
+<h2 id="2-JavaScript和HTML结合"><a href="#2-JavaScript和HTML结合" class="headerlink" title="2 JavaScript和HTML结合"></a>2 JavaScript和HTML结合</h2><h3 id="2-1-方式一"><a href="#2-1-方式一" class="headerlink" title="2.1 方式一"></a>2.1 方式一</h3><p>只需要在 head 标签中，或者在 body 标签中， 使用 script 标签 来书写 JavaScript 代码</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="javascript"> <span class="comment">// alert 是 JavaScript 语言提供的一个警告框函数。 // 它可以接收任意类型的参数，这个参数就是警告框的提示信息 alert(&quot;hello javaScript!&quot;); </span></span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>  </span><br><span class="line">     </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-方式二"><a href="#2-2-方式二" class="headerlink" title="2.2 方式二"></a>2.2 方式二</h3><p>使用 script 标签引入 单独的 JavaScript 代码文件</p>
+<p>JavaScript中内容：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">alert(<span class="string">&quot;hello javaScript!&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>html 代码内容：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!--现在需要使用 script 引入外部的 js 文件来执行 src 属性专门用来引入 js 文件路径（可以是相对路径，也可以是绝对路径） script 标签可以用来定义 js 代码，也可以用来引入 js 文件 但是，两个功能二选一使用。不能同时使用两个功能 --&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;1.js&quot;</span>&gt;</span> <span class="tag">&lt;/<span class="name">script</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span><br><span class="line"><span class="javascript">		alert(<span class="string">&quot;国哥现在可以帅了&quot;</span>); </span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="4-变量"><a href="#4-变量" class="headerlink" title="4 变量"></a>4 变量</h2><p>什么是变量？变量是可以存放某些值的内存的命名。 </p>
+<ul>
+<li><p>JavaScript 的变量类型： </p>
+<p>数值类型： number </p>
+<p>字符串类型： string </p>
+<p>对象类型： object </p>
+<p>布尔类型： boolean </p>
+<p>函数类型： function </p>
+</li>
+<li><p>JavaScript 里特殊的值： </p>
+<p>undefined 未定义，所有 js 变量未赋于初始值的时候，默认值都是 undefined. </p>
+<p>null 空值 </p>
+<p>NaN 全称是：Not a Number，非数字，非数值。 </p>
+</li>
+<li><p>JS 中的定义变量格式：</p>
+<p>​     var 变量名; </p>
+<p>​     var 变量名 = 值;</p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt; </span><br><span class="line">    <span class="keyword">var</span> i; </span><br><span class="line"><span class="comment">// typeof()是 JavaScript 语言提供的一个函数。 </span></span><br><span class="line">	i = <span class="string">&quot;abc&quot;</span>; <span class="comment">// 它可以取变量的数据类型返回 </span></span><br><span class="line">	alert( <span class="keyword">typeof</span>(i) ); </span><br><span class="line">	<span class="built_in">String</span> <span class="keyword">var</span> a = <span class="number">12</span>; </span><br><span class="line">	<span class="keyword">var</span> b = <span class="string">&quot;abc&quot;</span>; </span><br><span class="line">	alert( a * b ); </span><br><span class="line"><span class="comment">// NaN 是非数字，非数值。 </span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="6-关系、逻辑运算符"><a href="#6-关系、逻辑运算符" class="headerlink" title="6 关系、逻辑运算符"></a>6 关系、逻辑运算符</h2><p>等于：     ==     等于是简单的做字面值的比较 </p>
+<p>全等于：     ===     除了做字面值的比较之外，还会比较两个变量的数据类型</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">&quot;text/javascript&quot;</span>&gt; </span><br><span class="line">    <span class="keyword">var</span> a = <span class="string">&quot;12&quot;</span>; </span><br><span class="line">	<span class="keyword">var</span> b = <span class="number">12</span>; </span><br><span class="line">	alert( a == b ); <span class="comment">// true </span></span><br><span class="line">	alert( a === b ); <span class="comment">// false </span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>且运算： &amp;&amp; </p>
+<p>或运算： || </p>
+<p>取反运算： ! </p>
+<ul>
+<li><p>在 JavaScript 语言中，所有的变量，都可以做为一个 boolean 类型的变量去使用。 </p>
+<p>0 、null、 undefined、””(空串) 都认为是 false； </p>
+</li>
+</ul>
+<ul>
+<li><p>&amp;&amp; 且运算。 </p>
+<p>有两种情况： </p>
+<p>第一种：当表达式全为真的时候。返回最后一个表达式的值。 </p>
+<p>第二种：当表达式中，有一个为假的时候。返回第一个为假的表达式的值 </p>
+</li>
+</ul>
+<ul>
+<li><p>|| 或运算 </p>
+<p>第一种情况：当表达式全为假时，返回最后一个表达式的值 </p>
+<p>第二种情况：只要有一个表达式为真。就会把回第一个为真的表达式的值 </p>
+</li>
+</ul>
+<ul>
+<li><p>并且 &amp;&amp; 与运算 和 ||或运算 有短路。 </p>
+<p>短路就是说，当这个&amp;&amp;或||运算有结果了之后 。后面的表达式不再执行 </p>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="string">&quot;abc&quot;</span>; </span><br><span class="line"><span class="keyword">var</span> b = <span class="literal">true</span>; </span><br><span class="line"><span class="keyword">var</span> d = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">var</span> c = <span class="literal">null</span>; </span><br><span class="line">alert( a &amp;&amp; b );<span class="comment">//true</span></span><br><span class="line">alert( b &amp;&amp; a );<span class="comment">//true </span></span><br><span class="line">alert( a &amp;&amp; d ); <span class="comment">// false </span></span><br><span class="line">alert( a &amp;&amp; c ); <span class="comment">// null</span></span><br><span class="line">alert( d || c ); <span class="comment">// null </span></span><br><span class="line">alert( c|| d ); <span class="comment">//false </span></span><br><span class="line">alert( a || c ); <span class="comment">//abc </span></span><br><span class="line">alert( b || c ); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="7-数组"><a href="#7-数组" class="headerlink" title="7 数组"></a>7 数组</h2><p>JS 中 数组的定义： </p>
+<p>格式： </p>
+<p>​    var 数组名 = []; // 空数组 </p>
+<p>​    var 数组名 = [1 , ’abc’ , true]; // 定义数组同时赋值元素</p>
+<h2 id="8-函数"><a href="#8-函数" class="headerlink" title="8 函数"></a>8 函数</h2><h3 id="8-1-函数定义方式"><a href="#8-1-函数定义方式" class="headerlink" title="8.1 函数定义方式"></a>8.1 函数定义方式</h3><ul>
+<li>第一种</li>
+</ul>
+<p>使用的格式如下: </p>
+<p>​    function 函数名(形参列表){ </p>
+<p>​        函数体 </p>
+<p>​    }</p>
+<p>在 JavaScript 语言中，如何定义带有返回值的函数？ </p>
+<p>只需要在函数体内直接使用 return 语句返回值即可！</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1,num2</span>) </span>&#123; </span><br><span class="line">	<span class="keyword">var</span> result = num1 + num2; </span><br><span class="line">	<span class="keyword">return</span> result; </span><br><span class="line">&#125;</span><br><span class="line">alert( sum(<span class="number">100</span>,<span class="number">50</span>) );</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>第二种</li>
+</ul>
+<p>使用格式如下： </p>
+<p>​    var 函数名 = function(形参列表) {</p>
+<p>​        函数体 </p>
+<p>​    }</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fun3 = <span class="function"><span class="keyword">function</span> (<span class="params">num1,num2</span>) </span>&#123; </span><br><span class="line">	<span class="keyword">return</span> num1 + num2; </span><br><span class="line">&#125;</span><br><span class="line">alert( fun3(<span class="number">100</span>,<span class="number">200</span>) );</span><br></pre></td></tr></table></figure>
+
+
+
+<p>注：在 Java 中函数允许重载。但是在 JS 中函数的重载会直接覆盖掉上一次的定义</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">	alert(<span class="string">&quot;无参函数 fun()&quot;</span>); </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">a,b</span>) </span>&#123; </span><br><span class="line">	alert(<span class="string">&quot;有参函数 fun(a,b)&quot;</span>); </span><br><span class="line">&#125;</span><br><span class="line">fun();</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-3-函数的arguments-隐形参数（只在function函数内）"><a href="#8-3-函数的arguments-隐形参数（只在function函数内）" class="headerlink" title="8.3 函数的arguments 隐形参数（只在function函数内）"></a>8.3 函数的arguments 隐形参数（只在function函数内）</h3><p>就是在 function 函数中不需要定义，但却可以直接用来获取所有参数的变量。我们管它叫隐形参数。 </p>
+<p>隐形参数特别像 java 基础的可变长参数一样。         </p>
+<p>public void fun( Object … args ); </p>
+<p>可变长参数是一个数组。 </p>
+<p>那么 js 中的隐形参数也跟 java 的可变长参数一样。操作类似数组。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">a</span>) </span>&#123; </span><br><span class="line">    alert( <span class="built_in">arguments</span>.length );</span><br><span class="line">    <span class="comment">//可看参数个数 alert( arguments[0] ); </span></span><br><span class="line">    alert( <span class="built_in">arguments</span>[<span class="number">1</span>] ); </span><br><span class="line">    alert( <span class="built_in">arguments</span>[<span class="number">2</span>] ); </span><br><span class="line">    alert(<span class="string">&quot;a = &quot;</span> + a); </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++)&#123; </span><br><span class="line">        alert( <span class="built_in">arguments</span>[i] ); </span><br><span class="line">    &#125;</span><br><span class="line">    alert(<span class="string">&quot;无参函数 fun()&quot;</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 需求：要求 编写 一个函数。用于计算所有参数相加的和并返回 </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1,num2</span>) </span>&#123; </span><br><span class="line">    <span class="keyword">var</span> result = <span class="number">0</span>; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">arguments</span>.length; i++) &#123; </span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">typeof</span>(<span class="built_in">arguments</span>[i]) == <span class="string">&quot;number&quot;</span>) &#123; </span><br><span class="line">            result += <span class="built_in">arguments</span>[i]; </span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result; </span><br><span class="line">&#125;</span><br><span class="line">alert( sum(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="string">&quot;abc&quot;</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>) );</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="9-JS中的自定义对象"><a href="#9-JS中的自定义对象" class="headerlink" title="9 JS中的自定义对象"></a>9 JS中的自定义对象</h2><h3 id="9-1-Object形式的自定义对象"><a href="#9-1-Object形式的自定义对象" class="headerlink" title="9.1 Object形式的自定义对象"></a>9.1 Object形式的自定义对象</h3><p>对象的定义： </p>
+<p>var 变量名 = new Object(); // 对象实例（空对象） </p>
+<p>变量名.属性名 = 值; // 定义一个属性 </p>
+<p>变量名.函数名 = function(){} // 定义一个函数 </p>
+<p>对象的访问： 变量名.属性 / 函数名();</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>(); </span><br><span class="line">obj.name = <span class="string">&quot;华仔&quot;</span>;</span><br><span class="line">obj.age = <span class="number">18</span>; </span><br><span class="line">obj.fun = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">&quot;姓名：&quot;</span> + <span class="built_in">this</span>.name + <span class="string">&quot; , 年龄：&quot;</span> + <span class="built_in">this</span>.age); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-2-形式的自定义对象"><a href="#9-2-形式的自定义对象" class="headerlink" title="9.2 {}形式的自定义对象"></a>9.2 {}形式的自定义对象</h3><p>对象的定义： </p>
+<p>var 变量名 = { // 空对象 </p>
+<p>​    属性名：值, // 定义一个属性 </p>
+<p>​    属性名：值, // 定义一个属性 </p>
+<p>​    函数名：function(){} // 定义一个函数 </p>
+<p>}; </p>
+<p>对象的访问： </p>
+<p>​    变量名.属性 / 函数名(); </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">	name:<span class="string">&quot;国哥&quot;</span>, </span><br><span class="line">    age:<span class="number">18</span>, </span><br><span class="line">    fun : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        alert(<span class="string">&quot;姓名：&quot;</span> + <span class="built_in">this</span>.name + <span class="string">&quot; , 年龄：&quot;</span> + <span class="built_in">this</span>.age); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">alert(obj.name); </span><br><span class="line">obj.fun();</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="10-JS中的事件"><a href="#10-JS中的事件" class="headerlink" title="10 JS中的事件"></a>10 JS中的事件</h2><p>​    事件是电脑输入设备与页面进行交互的响应，我们称之为事件。</p>
+<ul>
+<li><p>常用事件：</p>
+<p>onload 加载完成事件：                 页面加载完成之后，常用于做页面 js 代码初始化操作 </p>
+<p>onclick 单击事件：                        常用于按钮的点击响应操作。 </p>
+<p>onblur 失去焦点事件：                 常用用于输入框失去焦点后验证其输入内容是否合法。 </p>
+<p>onchange 内容发生改变事件：     常用于下拉列表和输入框内容发生改变后操作 </p>
+<p>onsubmit 表单提交事件：             常用于表单提交前，验证所有表单项是否合法。</p>
+</li>
+<li><p>静态注册事件：通过 html 标签的事件属性直接赋于事件响应后的代码，这种方式我们叫静态注册。 </p>
+</li>
+<li><p>动态注册事件：是指先通过 js 代码得到标签的 dom 对象，然后再通过 dom 对象.事件名 = function(){} 这种形式赋于事件 </p>
+</li>
+</ul>
+<p>响应后的代码，叫动态注册。 </p>
+<p> 动态注册基本步骤： </p>
+<p>1、获取标签对象 </p>
+<p>2、标签对象.事件名 = fucntion(){} </p>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
       </categories>
       <tags>
         <tag>learn</tag>

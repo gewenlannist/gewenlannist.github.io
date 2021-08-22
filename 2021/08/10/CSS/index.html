@@ -28,13 +28,13 @@
 <meta property="og:site_name" content="Lannistの博客">
 <meta property="og:description" content="1 CSS技术  文档：CSS2.0.chm CSS 是「层叠样式表单」。是用于(增强)控制网页样式并允许将样式信息与网页内容分离的一种标记性语言。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2021/08/10/CSS/QQ%E6%88%AA%E5%9B%BE20210810174139.png">
+<meta property="og:image" content="http://example.com/CSS/QQ%E6%88%AA%E5%9B%BE20210810174139.png">
 <meta property="article:published_time" content="2021-08-10T09:30:09.000Z">
-<meta property="article:modified_time" content="2021-08-10T10:31:43.437Z">
+<meta property="article:modified_time" content="2021-08-18T05:35:09.078Z">
 <meta property="article:author" content="Lannist">
 <meta property="article:tag" content="learn">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2021/08/10/CSS/QQ%E6%88%AA%E5%9B%BE20210810174139.png">
+<meta name="twitter:image" content="http://example.com/CSS/QQ%E6%88%AA%E5%9B%BE20210810174139.png">
 
 <link rel="canonical" href="http://example.com/2021/08/10/CSS/">
 
@@ -130,12 +130,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">7</span></a>
+    <a href="/categories/" rel="section"><i class="th fa-fw"></i>分类<span class="badge">8</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">36</span></a>
+    <a href="/archives/" rel="section"><i class="archive fa-fw"></i>归档<span class="badge">37</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -255,7 +255,7 @@
 
 
 
-<h2 id="2-CSS语法规则"><a href="#2-CSS语法规则" class="headerlink" title="2 CSS语法规则"></a>2 CSS语法规则</h2><p><img src="/2021/08/10/CSS/QQ%E6%88%AA%E5%9B%BE20210810174139.png"></p>
+<h2 id="2-CSS语法规则"><a href="#2-CSS语法规则" class="headerlink" title="2 CSS语法规则"></a>2 CSS语法规则</h2><p><img src="/CSS/QQ%E6%88%AA%E5%9B%BE20210810174139.png"></p>
 <ul>
 <li><p><strong>选择器</strong>：浏览器根据“选择器”决定受 CSS 样式影响的 HTML 元素（标签）。 </p>
 </li>
@@ -275,7 +275,7 @@
 
 
 
-<h2 id="CSS和HTML结合"><a href="#CSS和HTML结合" class="headerlink" title="CSS和HTML结合"></a>CSS和HTML结合</h2><h3 id="2-1-第一种"><a href="#2-1-第一种" class="headerlink" title="2.1 第一种"></a>2.1 第一种</h3><ul>
+<h2 id="3-CSS和HTML结合"><a href="#3-CSS和HTML结合" class="headerlink" title="3 CSS和HTML结合"></a>3 CSS和HTML结合</h2><h3 id="2-1-第一种"><a href="#2-1-第一种" class="headerlink" title="2.1 第一种"></a>2.1 第一种</h3><ul>
 <li><p>在标签的 style 属性上设置”key:value value;”，修改标签样式</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!--需求 1：分别定义两个 div、span 标签，分别修改每个 div 标签的样式为：边框 1 个像素，实线，红色。--&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;border: 1px solid red;width = &quot;</span><span class="attr">100</span>&quot; &quot;&gt;</span>div 标签 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">&quot;border: 1px solid red;&quot;</span>&gt;</span>div 标签 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;border: 1px solid red;&quot;</span>&gt;</span>span 标签 1<span class="tag">&lt;/<span class="name">span</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">style</span>=<span class="string">&quot;border: 1px solid red;&quot;</span>&gt;</span>span 标签 2<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -303,25 +303,93 @@
 
 
 
+<h2 id="4-CSS选择器"><a href="#4-CSS选择器" class="headerlink" title="4 CSS选择器"></a>4 CSS选择器</h2><h3 id="4-1标签名选择器"><a href="#4-1标签名选择器" class="headerlink" title="4.1标签名选择器"></a>4.1标签名选择器</h3><p>标签名选择器的格式是： </p>
+<p>​    标签名{ </p>
+<p>​    属性：值; </p>
+<p>​    }</p>
+<p>标签名选择器，可以决定哪些标签被动的使用这个样式。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>CSS 选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span> </span><br><span class="line">		div&#123;</span><br><span class="line">            border: 1px solid yellow; </span><br><span class="line">            color: blue; </span><br><span class="line">            font-size: 30px; </span><br><span class="line">        &#125;</span><br><span class="line">        span&#123; </span><br><span class="line">            border: 5px dashed blue;</span><br><span class="line">            color: yellow; </span><br><span class="line">            font-size: 20px; </span><br><span class="line">        &#125; </span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!-- 需求 1：在所有 div 标签上修改字体颜色为蓝色，字体大小 30 个像素。边框为 1 像素黄色实线。</span></span><br><span class="line"><span class="comment">			并且修改所有 span 标签的字体颜色为黄色，字体大小 20 个像素。边框为 5 像素蓝色虚线。</span></span><br><span class="line"><span class="comment">	--&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>div 标签 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>div 标签 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>span 标签 1<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>span 标签 2<span class="tag">&lt;/<span class="name">span</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="4-2id选择器"><a href="#4-2id选择器" class="headerlink" title="4.2id选择器"></a>4.2id选择器</h3><p>id 选择器的格式是： </p>
+<p>​    #id 属性值{ </p>
+<p>​            属性：值; </p>
+<p>​    }</p>
+<p>id 选择器，可以让我们通过 id 属性选择性的去使用这个样式。 </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>ID 选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span> </span><br><span class="line"><span class="css">		<span class="selector-id">#id001</span>&#123; </span></span><br><span class="line">            color: blue; </span><br><span class="line">            font-size: 30px;</span><br><span class="line">            border: 1px yellow solid;</span><br><span class="line">            &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#id002</span>&#123; </span></span><br><span class="line">            color: red; </span><br><span class="line">            font-size: 20px;</span><br><span class="line">            border: 5px blue dotted ; </span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!-- 需求 1：分别定义两个 div 标签， 第一个 div 标签定义 id 为 id001 ，然后根据 id 属性定义 css 样式修改字体颜色为蓝色， 字体大小 30 个像素。边框为 1 像素黄色实线。 第二个 div 标签定义 id 为 id002 ，然后根据 id 属性定义 css 样式 修改的字体颜色为红色，字体大小 20 个像素。 边框为 5 像素蓝色点线。</span></span><br><span class="line"><span class="comment">--&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;id002&quot;</span>&gt;</span>div 标签 1<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;id001&quot;</span>&gt;</span>div 标签 2<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="4-3-class选择器（类选择器）"><a href="#4-3-class选择器（类选择器）" class="headerlink" title="4.3 class选择器（类选择器）"></a>4.3 class选择器（类选择器）</h3><p>class 类型选择器的格式是： </p>
+<p>​        **.**class 属性值{ </p>
+<p>​            属性：值; </p>
+<p>​        } </p>
+<p>class 类型选择器，可以通过 class 属性有效的选择性地去使用这个样式。</p>
+<p>id 只能一个 class 可以多个</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>class 类型选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span> </span><br><span class="line"><span class="css">        <span class="selector-class">.class01</span>&#123; </span></span><br><span class="line">            color: blue; </span><br><span class="line">            font-size: 30px;</span><br><span class="line">            border: 1px solid yellow; </span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-class">.class02</span>&#123; </span></span><br><span class="line">            color: grey; </span><br><span class="line">            font-size: 26px;</span><br><span class="line">            border: 1px solid red; </span><br><span class="line">        &#125; </span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!--需求 1：修改 class 属性值为 class01 的 span 或 div 标签，字体颜色为蓝色，字体大小 30 个像素。边框为 1 像素黄色实线。 </span></span><br><span class="line"><span class="comment">		需求 2：修改 class 属性值为 class02 的 div 标签，字体颜色为灰色，字体大小 26 个像素。边框为 1 像素红色实线。 --&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;class02&quot;</span>&gt;</span>div 标签<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;class02&quot;</span>&gt;</span>div 标签<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">&quot;class02&quot;</span>&gt;</span>span 标签<span class="tag">&lt;/<span class="name">span</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>span 标签 2<span class="tag">&lt;/<span class="name">span</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="4-4-组合选择器"><a href="#4-4-组合选择器" class="headerlink" title="4.4 组合选择器"></a>4.4 组合选择器</h3><p>组合选择器的格式是： </p>
+<p>​    选择器 1，选择器 2，选择器 n{ </p>
+<p>​        属性：值; </p>
+<p>​    } </p>
+<p>组合选择器可以让多个选择器共用同一个 css 样式代码。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>class 类型选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span> </span><br><span class="line"><span class="css">        <span class="selector-class">.class01</span> , <span class="selector-id">#id01</span>&#123; </span></span><br><span class="line">			color: blue; </span><br><span class="line">            font-size: 20px; </span><br><span class="line">            border: 1px yellow solid; &#125; </span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span> </span><br><span class="line">    <span class="comment">&lt;!-- 需求 1：修改 class=&quot;class01&quot; 的 div 标签 和 id=&quot;id01&quot; 所有的 span 标签， 字体颜色为蓝色，字体大小 20 个像素。边框为 1 像素黄色实线。 --&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;id01&quot;</span>&gt;</span>div 标签 class01<span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span> /&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> &gt;</span>span 标签<span class="tag">&lt;/<span class="name">span</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span> /&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>div 标签<span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span> /&gt;</span> </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>div 标签 id01<span class="tag">&lt;/<span class="name">div</span>&gt;</span> <span class="tag">&lt;<span class="name">br</span> /&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h3 id="4-5常用样式"><a href="#4-5常用样式" class="headerlink" title="4.5常用样式"></a>4.5常用样式</h3><ul>
+<li>字体颜色 </li>
+</ul>
+<p>color：red； </p>
+<p>颜色可以写颜色名如：black, blue, red, green 等 </p>
+<p>颜色也可以写 rgb 值和十六进制表示值：如 rgb(255,0,0)，#00F6DE，如果写十六进制值必 </p>
+<p>须加#</p>
+<ul>
+<li>宽度</li>
+</ul>
+<p>width:19px; </p>
+<p>宽度可以写像素值：19px； </p>
+<p>也可以写百分比值：20%；</p>
+<ul>
+<li>高度</li>
+</ul>
+<p>height:20px; </p>
+<p>高度可以写像素值：19px； </p>
+<p>也可以写百分比值：20%； </p>
+<ul>
+<li>背景颜色 </li>
+</ul>
+<p>background-color:#0F2D4C </p>
+<ul>
+<li>字体样式： </li>
+</ul>
+<p>color：#FF0000；字体颜色红色 </p>
+<p>font-size：20px; 字体大小 </p>
+<ul>
+<li>红色 1 像素实线边框 </li>
+</ul>
+<p>border：1px solid red; </p>
+<ul>
+<li>DIV 居中 </li>
+</ul>
+<p>margin-left: auto; </p>
+<p>margin-right: auto; </p>
+<ul>
+<li>文本居中： </li>
+</ul>
+<p>text-align: center;9、超连接去下划线 </p>
+<p>text-decoration: none; </p>
+<ul>
+<li><p>表格细线 </p>
+<p>table { </p>
+<p>​    border: 1px solid black; /<em>设置边框</em>/ </p>
+<p>​    border-collapse: collapse; /<em>将边框合并</em>/ </p>
+<p>}</p>
+<p>td,th {</p>
+<p>​    border: 1px solid black; /<em>设置边框</em>/ </p>
+<p>} </p>
+</li>
+</ul>
+<p>11、列表去除修饰 </p>
+<p>​    ul { </p>
+<p>​        list-style: none; </p>
+<p>​    } </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span> </span><br><span class="line">    div&#123;</span><br><span class="line">        color: red; </span><br><span class="line">        border: 1px yellow solid; </span><br><span class="line">        width: 300px; </span><br><span class="line">        height: 300px;</span><br><span class="line">        background-color: green;</span><br><span class="line">        font-size: 30px; </span><br><span class="line">        margin-left: auto; </span><br><span class="line">        margin-right: auto;</span><br><span class="line">        text-align: center; </span><br><span class="line">    &#125;</span><br><span class="line">    table&#123; </span><br><span class="line">        border: 1px red solid;</span><br><span class="line">        border-collapse: collapse; </span><br><span class="line">    &#125;</span><br><span class="line">    td&#123;</span><br><span class="line">        border: 1px red solid; </span><br><span class="line">    &#125;</span><br><span class="line">    a&#123; </span><br><span class="line">        text-decoration: none; </span><br><span class="line">    &#125;</span><br><span class="line">    ul&#123; </span><br><span class="line">        list-style: none;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 
 
@@ -453,7 +521,10 @@
     <a href="/2021/07/29/HTML/" rel="prev" title="HTML">
       <i class="fa fa-chevron-left"></i> HTML
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/18/JavaScript/" rel="next" title="JavaScript">
+      JavaScript <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -512,7 +583,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-CSS%E6%8A%80%E6%9C%AF-%E6%96%87%E6%A1%A3%EF%BC%9ACSS2-0-chm"><span class="nav-text">1 CSS技术  文档：CSS2.0.chm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-CSS%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99"><span class="nav-text">2 CSS语法规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS%E5%92%8CHTML%E7%BB%93%E5%90%88"><span class="nav-text">CSS和HTML结合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E7%AC%AC%E4%B8%80%E7%A7%8D"><span class="nav-text">2.1 第一种</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E7%AC%AC%E4%BA%8C%E7%A7%8D"><span class="nav-text">2.2 第二种</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E7%AC%AC%E4%B8%89%E7%A7%8D"><span class="nav-text">2.3 第三种</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-CSS%E6%8A%80%E6%9C%AF-%E6%96%87%E6%A1%A3%EF%BC%9ACSS2-0-chm"><span class="nav-text">1 CSS技术  文档：CSS2.0.chm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-CSS%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99"><span class="nav-text">2 CSS语法规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-CSS%E5%92%8CHTML%E7%BB%93%E5%90%88"><span class="nav-text">3 CSS和HTML结合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E7%AC%AC%E4%B8%80%E7%A7%8D"><span class="nav-text">2.1 第一种</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E7%AC%AC%E4%BA%8C%E7%A7%8D"><span class="nav-text">2.2 第二种</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E7%AC%AC%E4%B8%89%E7%A7%8D"><span class="nav-text">2.3 第三种</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-CSS%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-text">4 CSS选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1%E6%A0%87%E7%AD%BE%E5%90%8D%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-text">4.1标签名选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2id%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-text">4.2id选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-class%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%88%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8%EF%BC%89"><span class="nav-text">4.3 class选择器（类选择器）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-4-%E7%BB%84%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-text">4.4 组合选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-5%E5%B8%B8%E7%94%A8%E6%A0%B7%E5%BC%8F"><span class="nav-text">4.5常用样式</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -528,14 +599,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
